@@ -31,8 +31,3 @@ export PS1='[\u@\h \w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]]$ '
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
-
-export GEM_HOME="$HOME/gems"
-export GEM_PATH="$GEM_HOME:/usr/lib/ruby/1.8"
-export PATH="$GEM_HOME/bin:$PATH" 
-export RUBYLIB="$GEM_HOME/lib/"
