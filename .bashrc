@@ -7,11 +7,15 @@ fi
 
 # User specific aliases and functions
 
-source ~/.bash_profile
-#source /etc/bash_completion.d/mercurial.sh
-source /home/kron/REPOS/django/extras/django_bash_completion
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile
+fi
 
-PATH=$PATH:/sbin:$HOME/bin
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+PATH=$PATH:/sbin:$HOME/bin:$HOME/.gem/ruby/1.8/bin
 
 export PATH
 export EDITOR=vim
@@ -26,7 +30,7 @@ export HISTIGNORE="&:ls:[bf]g:exit"
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-export PS1='[\u@\h \w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]]$ '
+export PS1='[\u@\h \w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]]\$ '
 
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
