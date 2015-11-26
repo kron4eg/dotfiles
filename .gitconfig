@@ -1,0 +1,39 @@
+[user]
+	name = Artiom Di
+	email = kron82@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[merge]
+	tool = vimdiff
+[alias]
+	ci = commit
+	fci = commit --amend -m
+	st = status -sb
+	co = checkout
+	diff = diff --word-diff
+	br = branch
+	sb = show-branch
+	mt = mergetool
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	gg = grep --break --heading -n
+
+[branch]
+	autosetupmerge = true
+[push]
+	default = nothing
+[url "git@github.com:"]
+	insteadOf = gh:
+[url "git@bitbucket.org:"]
+	insteadOf = bb:
+[url "git@git.assembla.com:"]
+	insteadOf = as:
+[diff]
+	algorithm = patience
+	tool = vimdiff
+[core]
+	excludesfile = /Users/kron/.gitignore_global
+	editor = vim
+[difftool]
+	prompt = false
