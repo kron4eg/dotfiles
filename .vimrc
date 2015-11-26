@@ -71,7 +71,6 @@ filetype plugin indent on
 
 set autoread
 
-set splitbelow
 set splitright
 
 set wildmode=list:longest,list:full
