@@ -1,123 +1,303 @@
-set nocompatible
+if &compatible
+  set nocompatible
+end
 
-set wildmenu
-set wcm=<Tab>
-    menu Encoding.koi8-r        :e ++enc=koi8-r<CR>
-    menu Encoding.windows-1251  :e ++enc=cp1251<CR>
-    menu Encoding.ibm-866       :e ++enc=ibm866<CR>
-    menu Encoding.utf-8         :e ++enc=utf-8 <CR>
-map <F8> :emenu Encoding.<TAB>
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
-language en_US.UTF-8
-" Включаем мышку даже в текстовом режиме
-" (очень удобно при копировании из терминала, т. к. без этой опции,
-" например, символы табуляции раскладываются в кучу пробелов).
-" set mouse=a
+call plug#begin('~/.vim/plugged')
 
-" Минимальная высота окна
-set winminheight=0
+Plug 'tpope/vim-sensible'
 
-" Минимальная ширина окна
-set winminwidth=0
+" Colorscheme
+Plug 'tomasr/molokai'
 
-" Всегда отображать статусную строку для каждого окна
-set laststatus=2
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
 
-" Теперь нет необходимости передвигать курсор к краю экрана, чтобы подняться в
-" режиме редактирования
-set scrolljump=7
-" Теперь нет необходимости передвигать курсор к краю экрана, чтобы опуститься 
-" в режиме редактирования
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-set scrolloff=7
+" Find files/buffers
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dyng/ctrlsf.vim'
 
-" Выключаем надоедливый звонок
-set novisualbell
-set t_vb=   
+" Status line
+Plug 'bling/vim-airline'
 
-set statusline=%<%f%h%m%r\ %b\ %{&encoding}\ 0x\ \ %l,%c%V\ %P 
-set laststatus=2
+Plug 'bronson/vim-trailing-whitespace'
 
-" Заставляем shift-insert работать как в Xterm
-map <S-Insert> <MiddleMouse>
+" Ctags
+Plug 'majutsushi/tagbar'
 
-set foldcolumn=1
+" Go
+Plug 'fatih/vim-go'
 
-" allow to use backspace instead of "x"
-set backspace=indent,eol,start whichwrap+=<,>,[,]
+" Ruby
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-bundler'
+Plug 'thoughtbot/vim-rspec'
+Plug 'ecomba/vim-ruby-refactoring'
 
-" Размер табуляции
+" Rust
+Plug 'rust-lang/rust.vim'
+
+" Toml
+Plug 'cespare/vim-toml'
+
+" Different
+Plug 'chrisbra/SudoEdit.vim'
+Plug 'vim-scripts/matchit.zip'
+Plug 'godlygeek/tabular'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-dispatch'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'simnalamburt/vim-mundo'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+"Plug 'fholgado/minibufexpl.vim'
+
+"Plug 'benmills/vimux'
+
+call plug#end()
+
+let g:rehash256 = 1
+filetype plugin indent on
+
+set autoread
+
+set splitbelow
+set splitright
+
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+set visualbell t_vb=
+
+"" Copy/Paste/Cut
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+endif
+
+"" Encoding
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+
+"" Fix backspace indent
+set backspace=indent,eol,start
+
+"" Tabs. May be overriten by autocmd rules
 set tabstop=4
-set softtabstop=4
-set smarttab
+set softtabstop=0
+set shiftwidth=4
 set expandtab
 
-" Размер сдвига при нажатии на клавиши << и >>
-set shiftwidth=4
+"" Map leader to ,
+let mapleader=','
 
-" Копирует отступ от предыдущей строки
-set autoindent
+"" Enable hidden buffers
+set hidden
 
-" Включаем 'умную' автоматическую расстановку отступов
-set smartindent
-
-" Включаем подсветку синтаксиса
-syntax on
-
-" Включаем перенос строк
-set wrap
-
-" Перенос строк по словам, а не по буквам
-set linebreak
-
-" Включаем отображение выполняемой в данный момент команды в правом нижнем углу экрана.
-" К примеру, если вы наберете 2d, то в правом нижнем углу экрана Vim отобразит строку 2d.
-set showcmd
-
-" Все swap файлы будут помещаться в эту папку
-set dir=~/tmp/.swp
-
-" ужасающих розовый цвет дефолтного окошка убираем
-hi Pmenu ctermbg=239
-
-set fileencodings=utf-8,cp1251,koi8-r,cp866
-set termencoding=utf-8
-set formatoptions=tcql
-set helplang=ru
-"set nu
-set ruler
-"set background=dark
-set autoindent
-"set foldmethod=indent
-"set foldnestmax=1
-colors desert
-set ignorecase
-set smartcase
+"" Searching
 set hlsearch
 set incsearch
-set listchars+=precedes:<,extends:>
-set sidescroll=5
-set sidescrolloff=5
-set showmatch
-set history=500
-filetype plugin on
-filetype indent on
-set undolevels=100
+set ignorecase
+set smartcase
+
+"" Encoding
+set bomb
+set binary
 set ttyfast
-set mousemodel=popup
-"set hidden
-set mousehide
-let g:netrw_list_hide   = '\.pyc'
-let g:proj_flags	= 'giSsTt'
 
-let python_highlight_all=1
+"" Directories for swp files
+set nobackup
+set noswapfile
 
-highlight Comment ctermfg=darkgrey
+set fileformats=unix,dos,mac
+set showcmd
 
-"imap {<CR> {<CR>}<Esc>O<Tab>
-imap <C-Space> <C-N>
-"nmap <Home> ^
-"imap <Home> <Esc>I
+"" Visual Settings
+syntax on
+set ruler
+
+set relativenumber
+set number
+set numberwidth=5
+
+"Toggle relative numbering, and set to absolute on loss of focus or insert mode
+function! ToggleNumbersOn()
+    set nu!
+    set rnu
+endfunction
+function! ToggleRelativeOn()
+    set rnu!
+    set nu
+endfunction
+autocmd FocusLost * call ToggleRelativeOn()
+autocmd FocusGained * call ToggleRelativeOn()
+autocmd InsertEnter * call ToggleRelativeOn()
+autocmd InsertLeave * call ToggleRelativeOn()
+
+
+colorscheme molokai
+set t_Co=256
+set cursorline
+
+set laststatus=2
+
+set title
+set titleold="Terminal"
+set titlestring=%F
+
+" vim-airline
+let g:airline_theme = 'powerlineish'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+
+"" no one is really happy until you have this shortcuts
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
+
+"*****************************************************************************
+"" Functions
+"*****************************************************************************
+
+"" Remember cursor position
+augroup vimrc-remember-cursor-position
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+
+"" make/cmake
+augroup vimrc-make-cmake
+  autocmd!
+  autocmd FileType make setlocal noexpandtab
+  autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
+augroup END
+
+" vim-python
+augroup vimrc-python
+  autocmd!
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+      \ formatoptions+=croq softtabstop=4 smartindent
+      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+augroup END
+
+augroup FileType go
+  au!
+  au FileType go nmap gd <Plug>(go-def)
+  au FileType go nmap <Leader>dd <Plug>(go-def-vertical)
+
+  au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
+  au FileType go nmap <Leader>db <Plug>(go-doc-browser)
+
+  au FileType go nmap <Leader>gi <Plug>(go-info)
+
+  au FileType go nmap <leader>gr <Plug>(go-run)
+  au FileType go nmap <leader>rb <Plug>(go-build)
+  au FileType go nmap <leader>gt <Plug>(go-test)
+augroup END
+
+
+augroup vimrc-ruby
+  autocmd!
+  autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
+  autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
+augroup END
+
+"*****************************************************************************
+"" Mappings
+"*****************************************************************************
+
+"" NERDTree configuration
+noremap <F3> :NERDTreeToggle<CR>
+
+"" Set working directory
+nnoremap <leader>. :lcd %:p:h<CR>
+
+"" Opens a tab edit command with the path of the currently edited file filled
+noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" CtrlP
+noremap <leader>b :CtrlPBuffer<CR>
+
+"" Buffer nav
+noremap <leader>z :bp<CR>
+noremap <leader>q :bp<CR>
+noremap <leader>x :bn<CR>
+noremap <leader>w :bn<CR>
+
+"" Close buffer
+noremap <leader>c :bd<CR>
+
+"" Clean search (highlight)
+nnoremap <silent> <leader><space> :noh<cr>
+
+"" Vmap for maintain Visual Mode after shifting > and <
+vmap < <gv
+vmap > >gv
+
+"" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Tagbar
+nmap <silent> <F4> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [  'p:package', 'i:imports:1', 'c:constants', 'v:variables',
+        \ 't:types',  'n:interfaces', 'w:fields', 'e:embedded', 'm:methods',
+        \ 'r:constructor', 'f:functions' ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : { 't' : 'ctype', 'n' : 'ntype' },
+    \ 'scope2kind' : { 'ctype' : 't', 'ntype' : 'n' },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
+
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" Ruby refactory
+nnoremap <leader>rap  :RAddParameter<cr>
+nnoremap <leader>rcpc :RConvertPostConditional<cr>
+nnoremap <leader>rel  :RExtractLet<cr>
+vnoremap <leader>rec  :RExtractConstant<cr>
+vnoremap <leader>relv :RExtractLocalVariable<cr>
+nnoremap <leader>rit  :RInlineTemp<cr>
+vnoremap <leader>rrlv :RRenameLocalVariable<cr>
+vnoremap <leader>rriv :RRenameInstanceVariable<cr>
+vnoremap <leader>rem  :RExtractMethod<cr>
 
 " сохранить файл
 imap <F2> <Esc>:w<CR>a
@@ -126,78 +306,3 @@ nmap <F2> :w<CR>
 " сохранить все файлы
 imap <S-F2> <Esc>:wa<CR>a
 nmap <S-F2> :wa<CR>
-
-" открыть проводник по файловой системе
-nmap <F3> :execute 'NERDTreeToggle ' . getcwd()<CR>
-
-" Удалить буфер
-imap <C-F4> <Esc>:bd<CR>a
-nmap <C-F4> :bd<CR>
-
-" предыдущий буфер
-nmap <M-Left> :bprev<CR>
-
-"следующий буфер
-nmap <M-Right> :bnext<CR>
-
-"подсвечивать всё, что вылазит за 80-ю колонку
-"au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
-"au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%80v.*', -1)
-
-" highlight trailing spaces
-"au BufNewFile,BufRead * let b:mtrailingws=matchadd('ErrorMsg', '\s\+$', -1)
-" highlight tabs between spaces
-"au BufNewFile,BufRead * let b:mtabbeforesp=matchadd('ErrorMsg', '\v(\t+)\ze( +)', -1)
-"au BufNewFile,BufRead * let b:mtabaftersp=matchadd('ErrorMsg', '\v( +)\zs(\t+)', -1)
-
-
-
-"set complete=""
-"set complete+=.
-"set complete+=k
-"set complete+=b
-"set complete+=t
-"set completeopt-=preview
-"set completeopt+=longest
-
-
-augroup myfiletypes
-  " Clear old autocmds in group
-  autocmd!
-  " autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
-augroup END
-
-
-
-if version >= 700
-"   По умолчанию проверка орфографии выключена.
-    setlocal spell spelllang=
-    setlocal nospell
-    function ChangeSpellLang()
-        if &spelllang =~ "en_us"
-            setlocal spell spelllang=ru
-            echo "spelllang: ru"
-        elseif &spelllang =~ "ru"
-            setlocal spell spelllang=
-            setlocal nospell
-            echo "spelllang: off"
-        else
-            setlocal spell spelllang=en_us
-            echo "spelllang: en"
-        endif
-    endfunc
-
-    " map spell on/off for English/Russian
-    map <F11> <Esc>:call ChangeSpellLang()<CR>
-endif
-
-" auto restore position in file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-endif
-
-
-let NERDTreeIgnore=['\.pyc$', '\~$']
-let g:bufExplorerShowRelativePath=1
