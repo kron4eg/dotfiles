@@ -97,9 +97,12 @@ set softtabstop=0
 set shiftwidth=4
 set expandtab
 
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw only when we need to.
+
 "" Map leader to ,
 let mapleader=' '
-nmap <leader>v :tabedit $MYVIMRC<CR>
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
 
 " Source the vimrc file after saving it
 if has("autocmd")
@@ -114,6 +117,11 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR><Paste>
 
 "" Encoding
 set bomb
@@ -226,9 +234,23 @@ augroup vimrc-ruby
   autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
 augroup END
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
+" bind K to grep word under cursor
+nnoremap <Leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "" NERDTree configuration
 noremap <F3> :NERDTreeToggle<CR>
