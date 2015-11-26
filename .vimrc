@@ -4,7 +4,8 @@ end
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &&
+    \ mkdir -p ~/.config && ln -s ~/.vim ~/.config/nvim && ln -s ~/.vimrc ~/.config/nvim/init.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
@@ -55,13 +56,11 @@ Plug 'cespare/vim-toml'
 Plug 'chrisbra/SudoEdit.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'godlygeek/tabular'
-Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-dispatch'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'simnalamburt/vim-mundo'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-"Plug 'fholgado/minibufexpl.vim'
 
 "Plug 'benmills/vimux'
 
@@ -99,7 +98,13 @@ set shiftwidth=4
 set expandtab
 
 "" Map leader to ,
-let mapleader=','
+let mapleader=' '
+nmap <leader>v :tabedit $MYVIMRC<CR>
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost $MYVIMRC source $MYVIMRC
+endif
 
 "" Enable hidden buffers
 set hidden
@@ -144,6 +149,8 @@ autocmd FocusGained * call ToggleRelativeOn()
 autocmd InsertEnter * call ToggleRelativeOn()
 autocmd InsertLeave * call ToggleRelativeOn()
 
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
 
 colorscheme molokai
 set t_Co=256

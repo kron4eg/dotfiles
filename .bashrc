@@ -22,7 +22,8 @@ export PATH=/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/open
 export MYSQL_PS1="\u@\h/\d> "
 export GREP_OPTIONS=--colour=auto
 export LANG=en_US.UTF-8
-export EDITOR=vim
+export EDITOR=nvim
+export ALTERNATE_EDITOR=vim
 export PAGER=less
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD}\007"'
 export HISTCONTROL="ignoredups"
