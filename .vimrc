@@ -208,18 +208,15 @@ augroup vimrc-python
 augroup END
 
 augroup FileType go
-  au!
-  au FileType go nmap gd <Plug>(go-def)
-  au FileType go nmap <Leader>dd <Plug>(go-def-vertical)
-
-  au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
-  au FileType go nmap <Leader>db <Plug>(go-doc-browser)
-
-  au FileType go nmap <Leader>gi <Plug>(go-info)
-
-  au FileType go nmap <leader>gr <Plug>(go-run)
-  au FileType go nmap <leader>rb <Plug>(go-build)
-  au FileType go nmap <leader>gt <Plug>(go-test)
+  autocmd!
+  autocmd FileType go nmap gd <Plug>(go-def)
+  autocmd FileType go nmap <Leader>dd <Plug>(go-def-vertical)
+  autocmd FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
+  autocmd FileType go nmap <Leader>db <Plug>(go-doc-browser)
+  autocmd FileType go nmap <Leader>gi <Plug>(go-info)
+  autocmd FileType go nmap <leader>gr <Plug>(go-run)
+  autocmd FileType go nmap <leader>rb <Plug>(go-build)
+  autocmd FileType go nmap <leader>gt <Plug>(go-test)
 augroup END
 
 
