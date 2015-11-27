@@ -99,10 +99,6 @@ set expandtab
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
 
-"" Map leader to ,
-let mapleader=' '
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
-
 " Source the vimrc file after saving it
 if has("autocmd")
   autocmd bufwritepost $MYVIMRC source $MYVIMRC
@@ -248,6 +244,11 @@ endif
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
+
+"" Map leader to ,
+let mapleader=' '
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+
 " bind K to grep word under cursor
 nnoremap <Leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
@@ -264,10 +265,9 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>b :CtrlPBuffer<CR>
 
 "" Buffer nav
-noremap <leader>z :bp<CR>
 noremap <leader>q :bp<CR>
-noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
+noremap <leader>d :bd<CR>
 
 "" Close buffer
 noremap <leader>c :bd<CR>
