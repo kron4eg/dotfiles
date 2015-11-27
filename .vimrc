@@ -63,6 +63,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'simnalamburt/vim-mundo'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'chrisbra/vim-diff-enhanced'
 
 "Plug 'benmills/vimux'
 
