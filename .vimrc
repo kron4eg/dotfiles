@@ -66,6 +66,10 @@ Plug 'tpope/vim-surround'
 Plug 'chrisbra/vim-diff-enhanced'
 
 "Plug 'benmills/vimux'
+"Plug 'christoomey/vim-tmux-navigator'
+"Plug 'scrooloose/syntastic'
+
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
