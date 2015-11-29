@@ -64,6 +64,7 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'chrisbra/vim-diff-enhanced'
+Plug 'moll/vim-bbye'
 
 "Plug 'benmills/vimux'
 "Plug 'christoomey/vim-tmux-navigator'
@@ -280,10 +281,7 @@ noremap <leader>b :CtrlPBuffer<CR>
 "" Buffer nav
 noremap <leader>q :bp<CR>
 noremap <leader>w :bn<CR>
-noremap <leader>d :bd<CR>
-
-"" Close buffer
-noremap <leader>c :bd<CR>
+noremap <leader>d :Bdelete<CR>
 
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
