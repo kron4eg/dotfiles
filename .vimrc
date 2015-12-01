@@ -295,6 +295,17 @@ vmap > >gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+if has('nvim')
+	:tnoremap <A-h> <C-\><C-n><C-w>h
+	:tnoremap <A-j> <C-\><C-n><C-w>j
+	:tnoremap <A-k> <C-\><C-n><C-w>k
+	:tnoremap <A-l> <C-\><C-n><C-w>l
+endif
+:nnoremap <A-h> <C-w>h
+:nnoremap <A-j> <C-w>j
+:nnoremap <A-k> <C-w>k
+:nnoremap <A-l> <C-w>l
+
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
