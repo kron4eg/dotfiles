@@ -16,13 +16,14 @@ Plug 'tpope/vim-sensible'
 " Colorscheme
 Plug 'tomasr/molokai'
 
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Find files/buffers
 Plug 'ctrlpvim/ctrlp.vim'
