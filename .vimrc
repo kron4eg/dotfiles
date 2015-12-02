@@ -92,7 +92,9 @@ if has('unnamedplus')
 endif
 
 "" Encoding
-set encoding=utf-8
+if !has('nvim')
+	set encoding=utf-8
+endif
 set fileencoding=utf-8
 set fileencodings=utf-8
 
@@ -107,11 +109,6 @@ set expandtab
 
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
-
-" Source the vimrc file after saving it
-if has("autocmd")
-  autocmd bufwritepost $MYVIMRC source $MYVIMRC
-endif
 
 "" Enable hidden buffers
 set hidden
@@ -163,6 +160,7 @@ autocmd InsertLeave * call ToggleRelativeOn()
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+set nolist
 
 colorscheme molokai
 set t_Co=256
