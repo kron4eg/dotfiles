@@ -7,6 +7,7 @@
 	branch = auto
 [merge]
 	tool = vimdiff
+	conflictstyle = diff3
 [alias]
 	ci = commit
 	fci = commit --amend -m
@@ -36,4 +37,6 @@
 	excludesfile = /Users/kron/.gitignore_global
 	editor = vim
 [difftool]
+	prompt = false
+[mergetool]
 	prompt = false
