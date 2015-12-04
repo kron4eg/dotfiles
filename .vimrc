@@ -16,14 +16,14 @@ Plug 'tpope/vim-sensible'
 " Colorscheme
 Plug 'tomasr/molokai'
 
-" Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-vinegar'
+Plug 'scrooloose/nerdtree'
+" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Find files/buffers
 Plug 'ctrlpvim/ctrlp.vim'
@@ -267,21 +267,18 @@ nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <Leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "" NERDTree configuration
-noremap <F3> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
 
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
-"" Opens a tab edit command with the path of the currently edited file filled
-noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
 " CtrlP
-noremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 
 "" Buffer nav
-noremap <leader>q :bp<CR>
-noremap <leader>w :bn<CR>
-noremap <leader>d :Bdelete<CR>
+nnoremap <leader>q :bp<CR>
+nnoremap <leader>w :bn<CR>
+nnoremap <leader>d :Bdelete<CR>
 
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
