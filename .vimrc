@@ -76,6 +76,8 @@ Plug 'Raimondi/delimitMate'
 
 Plug 'mxw/vim-jsx'
 
+Plug 'Shougo/unite.vim'
+
 call plug#end()
 
 let g:rehash256 = 1
