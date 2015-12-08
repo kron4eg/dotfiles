@@ -172,7 +172,7 @@ set nolist
 
 colorscheme molokai
 set t_Co=256
-set cursorline
+" set cursorline
 
 set laststatus=2
 
