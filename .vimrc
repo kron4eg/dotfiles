@@ -80,6 +80,7 @@ call plug#end()
 
 let g:rehash256 = 1
 filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
 
 set autoread
 
