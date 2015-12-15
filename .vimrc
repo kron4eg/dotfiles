@@ -70,7 +70,7 @@ Plug 'vim-utils/vim-man'
 
 "Plug 'benmills/vimux'
 "Plug 'christoomey/vim-tmux-navigator'
-"Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 Plug 'Raimondi/delimitMate'
 
@@ -84,6 +84,7 @@ let g:go_fmt_command = "goimports"
 let g:rehash256 = 1
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
+set completeopt=menu
 
 set autoread
 
