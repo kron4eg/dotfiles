@@ -46,6 +46,7 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
 Plug 'thoughtbot/vim-rspec'
 Plug 'ecomba/vim-ruby-refactoring'
+Plug 'tpope/vim-endwise'
 
 " Rust
 Plug 'rust-lang/rust.vim'
