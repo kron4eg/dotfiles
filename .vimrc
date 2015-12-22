@@ -84,8 +84,11 @@ call plug#end()
 
 let g:go_fmt_command = "goimports"
 let g:rehash256 = 1
+
 filetype plugin indent on
+
 set omnifunc=syntaxcomplete#Complete
+set completefunc=syntaxcomplete#Complete
 set completeopt=menu
 
 set autoread
