@@ -47,6 +47,7 @@ Plug 'tpope/vim-bundler'
 Plug 'thoughtbot/vim-rspec'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'tpope/vim-endwise'
+Plug 'sunaku/vim-ruby-minitest'
 
 " Rust
 Plug 'rust-lang/rust.vim'
