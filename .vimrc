@@ -78,7 +78,7 @@ Plug 'Raimondi/delimitMate'
 
 Plug 'mxw/vim-jsx'
 
-Plug 'Shougo/unite.vim'
+" Plug 'Shougo/unite.vim'
 
 call plug#end()
 
