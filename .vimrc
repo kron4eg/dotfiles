@@ -287,12 +287,12 @@ nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <leader>. :lcd %:p:h<CR>
 
 " CtrlP
-nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>cb :CtrlPBuffer<CR>
 
 "" Buffer nav
 nnoremap <leader>q :bp<CR>
 nnoremap <leader>w :bn<CR>
-nnoremap <leader>d :Bdelete<CR>
+nnoremap <leader>bd :Bdelete<CR>
 
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
