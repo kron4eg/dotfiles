@@ -49,6 +49,9 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'tpope/vim-endwise'
 Plug 'sunaku/vim-ruby-minitest'
 
+"Javascript
+Plug 'mustache/vim-mustache-handlebars'
+
 " Rust
 Plug 'rust-lang/rust.vim'
 
