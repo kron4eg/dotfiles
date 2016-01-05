@@ -283,6 +283,10 @@ nnoremap <leader>ev :vsp $MYVIMRC<CR>
 " bind K to grep word under cursor
 nnoremap <Leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" tab navigations
+nmap <tab> gt
+nmap <s-tab> gT
+
 "" NERDTree configuration
 nnoremap <F3> :NERDTreeToggle<CR>
 
