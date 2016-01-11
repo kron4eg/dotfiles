@@ -51,6 +51,7 @@ Plug 'sunaku/vim-ruby-minitest'
 
 "Javascript
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'leafgarland/typescript-vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
