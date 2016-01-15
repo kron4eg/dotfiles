@@ -17,7 +17,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tomasr/molokai'
 
 Plug 'scrooloose/nerdtree'
-" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 
 " Git
@@ -63,7 +62,6 @@ Plug 'cespare/vim-toml'
 Plug 'chrisbra/SudoEdit.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'godlygeek/tabular'
-Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-dotenv'
 Plug 'terryma/vim-multiple-cursors'
@@ -74,16 +72,11 @@ Plug 'chrisbra/vim-diff-enhanced'
 Plug 'moll/vim-bbye'
 Plug 'vim-utils/vim-man'
 
-"Plug 'benmills/vimux'
-"Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/syntastic'
 
 Plug 'Raimondi/delimitMate'
 
 Plug 'mxw/vim-jsx'
-
-" Plug 'Shougo/unite.vim'
-
 call plug#end()
 
 let g:go_fmt_command = "goimports"
@@ -145,7 +138,6 @@ nnoremap <leader>u :GundoToggle<CR><Paste>
 
 "" Encoding
 set bomb
-set binary
 set ttyfast
 
 "" Directories for swp files
