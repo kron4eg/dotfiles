@@ -52,6 +52,7 @@ Plug 'sunaku/vim-ruby-minitest'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'leafgarland/typescript-vim'
 Plug 'elzr/vim-json'
+Plug 'mxw/vim-jsx'
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -76,8 +77,6 @@ Plug 'vim-utils/vim-man'
 Plug 'scrooloose/syntastic'
 
 Plug 'Raimondi/delimitMate'
-
-Plug 'mxw/vim-jsx'
 call plug#end()
 
 let g:go_fmt_command = "goimports"
