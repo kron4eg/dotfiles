@@ -77,6 +77,9 @@ Plug 'vim-utils/vim-man'
 Plug 'scrooloose/syntastic'
 
 Plug 'Raimondi/delimitMate'
+
+" Databases
+Plug 'vim-scripts/dbext.vim'
 call plug#end()
 
 let g:go_fmt_command = "goimports"
