@@ -141,7 +141,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>u :GundoToggle<CR><Paste>
 
 "" Encoding
-set bomb
+set nobomb
 set ttyfast
 
 "" Directories for swp files
