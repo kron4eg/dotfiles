@@ -147,6 +147,8 @@ set ttyfast
 "" Directories for swp files
 set nobackup
 set noswapfile
+set autowrite
+set updatecount=10
 
 set fileformats=unix,dos,mac
 set showcmd
@@ -276,7 +278,7 @@ endif
 
 "" Map leader to ,
 let mapleader=' '
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>ev :e $MYVIMRC<CR>
 
 " bind K to grep word under cursor
 nnoremap <Leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -295,8 +297,10 @@ nnoremap <leader>. :lcd %:p:h<CR>
 nnoremap <leader>cb :CtrlPBuffer<CR>
 
 "" Buffer nav
-nnoremap <leader>q :bp<CR>
-nnoremap <leader>w :bn<CR>
+nnoremap <silent> <UP>    :cprev<CR>
+nnoremap <silent> <DOWN>  :cnext<CR>
+nnoremap <silent> <LEFT>  :bp<CR>
+nnoremap <silent> <RIGHT> :bn<CR>
 nnoremap <leader>bd :Bdelete<CR>
 
 "" Clean search (highlight)
