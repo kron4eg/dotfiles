@@ -74,6 +74,7 @@ Plug 'tpope/vim-surround'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'moll/vim-bbye'
 Plug 'vim-utils/vim-man'
+Plug 'junkblocker/patchreview-vim'
 
 Plug 'scrooloose/syntastic'
 
