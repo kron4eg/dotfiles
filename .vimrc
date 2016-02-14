@@ -110,7 +110,7 @@ endif
 
 "" Encoding
 if !has('nvim')
-	set encoding=utf-8
+    set encoding=utf-8
 endif
 set fileencoding=utf-8
 set fileencodings=utf-8
@@ -215,62 +215,62 @@ let g:rustfmt_autosave = 1
 
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
-  autocmd!
-  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+    autocmd!
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
 "" make/cmake
 augroup vimrc-make-cmake
-  autocmd!
-  autocmd FileType make setlocal noexpandtab
-  autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
+    autocmd!
+    autocmd FileType make setlocal noexpandtab
+    autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
 
 " vim-python
 augroup vimrc-python
-  autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-      \ formatoptions+=croq softtabstop=4 smartindent
-      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+    autocmd!
+    autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+        \ formatoptions+=croq softtabstop=4 smartindent
+        \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
 augroup FileType go
-  autocmd!
-  autocmd FileType go nmap gd <Plug>(go-def)
-  autocmd FileType go nmap <Leader>dd <Plug>(go-def-vertical)
-  autocmd FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
-  autocmd FileType go nmap <Leader>db <Plug>(go-doc-browser)
-  autocmd FileType go nmap <Leader>gi <Plug>(go-info)
-  autocmd FileType go nmap <leader>gr <Plug>(go-run)
-  autocmd FileType go nmap <leader>rb <Plug>(go-build)
-  autocmd FileType go nmap <leader>gt <Plug>(go-test)
+    autocmd!
+    autocmd FileType go nmap gd <Plug>(go-def)
+    autocmd FileType go nmap <Leader>dd <Plug>(go-def-vertical)
+    autocmd FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
+    autocmd FileType go nmap <Leader>db <Plug>(go-doc-browser)
+    autocmd FileType go nmap <Leader>gi <Plug>(go-info)
+    autocmd FileType go nmap <leader>gr <Plug>(go-run)
+    autocmd FileType go nmap <leader>rb <Plug>(go-build)
+    autocmd FileType go nmap <leader>gt <Plug>(go-test)
 augroup END
 
 
 augroup vimrc-ruby
-  autocmd!
-  autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
-  autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
+    autocmd!
+    autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
+    autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
 augroup END
 
 " The Silver Searcher
 if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+    " Use ag over grep
+    set grepprg=ag\ --nogroup\ --nocolor
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+    " ag is fast enough that CtrlP doesn't need to cache
+    let g:ctrlp_use_caching = 0
 endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 if !exists(":DiffOrig")
-  command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis
-                 \ | wincmd p | diffthis
+    command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis
+        \ | wincmd p | diffthis
 endif
 
 "*****************************************************************************
@@ -316,10 +316,10 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 if has('nvim')
-	:tnoremap <A-h> <C-\><C-n><C-w>h
-	:tnoremap <A-j> <C-\><C-n><C-w>j
-	:tnoremap <A-k> <C-\><C-n><C-w>k
-	:tnoremap <A-l> <C-\><C-n><C-w>l
+    :tnoremap <A-h> <C-\><C-n><C-w>h
+    :tnoremap <A-j> <C-\><C-n><C-w>j
+    :tnoremap <A-k> <C-\><C-n><C-w>k
+    :tnoremap <A-l> <C-\><C-n><C-w>l
 endif
 :nnoremap <A-h> <C-w>h
 :nnoremap <A-j> <C-w>j
