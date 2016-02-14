@@ -16,7 +16,7 @@ Plug 'tpope/vim-sensible'
 " Colorscheme
 Plug 'tomasr/molokai'
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
 
 " Git
