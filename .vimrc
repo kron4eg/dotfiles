@@ -23,7 +23,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Find files/buffers
-Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dyng/ctrlsf.vim'
 
@@ -84,7 +83,15 @@ call plug#end()
 
 let g:go_fmt_command = "goimports"
 let g:rehash256 = 1
-autocmd FileType netrw setl bufhidden=wipe
+
+" netrw settings
+let s:escape = 'substitute(escape(v:val, ".$~"), "*", ".*", "g")'
+let s:dotfiles = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_banner = 0
+let g:netrw_sort_sequence = '[\/]$,*,\%(' . join(map(split(&suffixes, ','), 'escape(v:val, ".*$~")'), '\|') . '\)[*@]\=$'
+let g:netrw_list_hide =
+      \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "$"'), ',') . ',^\.\.\=/\=$' .
+      \ (get(g:, 'netrw_list_hide', '')[-strlen(s:dotfiles)-1:-1] ==# s:dotfiles ? ','.s:dotfiles : '')
 
 filetype plugin indent on
 
