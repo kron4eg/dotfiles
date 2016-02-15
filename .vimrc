@@ -21,15 +21,14 @@ Plug 'tpope/vim-commentary'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Find files/buffers
+Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dyng/ctrlsf.vim'
 
 " Status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 Plug 'bronson/vim-trailing-whitespace'
 
@@ -67,7 +66,7 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-dotenv'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'simnalamburt/vim-mundo'
+Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'chrisbra/vim-diff-enhanced'
@@ -85,6 +84,7 @@ call plug#end()
 
 let g:go_fmt_command = "goimports"
 let g:rehash256 = 1
+autocmd FileType netrw setl bufhidden=wipe
 
 filetype plugin indent on
 
@@ -138,7 +138,7 @@ set smartcase
 nnoremap <leader><space> :nohlsearch<CR>
 
 " toggle gundo
-nnoremap <leader>u :GundoToggle<CR><Paste>
+nnoremap <F5> :GundoToggle<CR>
 
 "" Encoding
 set nobomb
@@ -190,11 +190,11 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 
-" vim-airline
-let g:airline_theme = 'distinguished'
-let g:airline#extensions#branch#enabled = 0
-let g:airline#extensions#tagbar#enabled = 0
-let g:airline#extensions#tabline#enabled = 1
+" statusline config
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
 
 "" no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
