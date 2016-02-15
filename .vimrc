@@ -25,6 +25,7 @@ Plug 'airblade/vim-gitgutter'
 " Find files/buffers
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dyng/ctrlsf.vim'
+Plug 'bling/vim-bufferline'
 
 " Status line
 Plug 'itchyny/lightline.vim'
