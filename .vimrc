@@ -16,7 +16,6 @@ Plug 'tpope/vim-sensible'
 " Colorscheme
 Plug 'tomasr/molokai'
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
 
 " Git
@@ -192,7 +191,7 @@ set titleold="Terminal"
 set titlestring=%F
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'distinguished'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -287,9 +286,6 @@ nnoremap <Leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " tab navigations
 nmap <tab> gt
 nmap <s-tab> gT
-
-"" NERDTree configuration
-nnoremap <F3> :NERDTreeToggle<CR>
 
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
