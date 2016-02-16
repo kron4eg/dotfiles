@@ -292,16 +292,13 @@ nmap <s-tab> gT
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
-" CtrlP
-nnoremap <leader>cb :CtrlPBuffer<CR>
-
 "" Buffer nav
 nnoremap <silent> <UP>    :cprev<CR>
 nnoremap <silent> <DOWN>  :cnext<CR>
 nnoremap <silent> <LEFT>  :bp<CR>
 nnoremap <silent> <RIGHT> :bn<CR>
-nnoremap <leader>bb :ls<CR>:b<space>
-nnoremap <leader>bd :Bdelete<CR>
+nnoremap <leader>b :ls<CR>:b<space>
+nnoremap <leader>c :Bdelete<CR>
 
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<CR>
