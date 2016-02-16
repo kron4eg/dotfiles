@@ -1,14 +1,19 @@
+" vim: set fdm=marker:
+
 if &compatible
   set nocompatible
 end
 
+" PLUG INIT {{{1
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &&
     \ mkdir -p ~/.config && ln -s ~/.vim ~/.config/nvim && ln -s ~/.vimrc ~/.config/nvim/init.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
+" END PLUG INIT 1}}}
 
+" PLUGINS {{{1
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
@@ -80,9 +85,70 @@ Plug 'Raimondi/delimitMate'
 " Databases
 Plug 'vim-scripts/dbext.vim'
 call plug#end()
+" END PLUGINS 1}}}
 
+" GENERAL VIM SETTINGS {{{1
+filetype plugin indent on
+set completeopt=menu
+set autoread
+set splitright
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+set visualbell t_vb=
+set keywordprg=":help"
+"" Copy/Paste/Cut
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+endif
+"" Encoding
+if !has('nvim')
+    set encoding=utf-8
+endif
+set fileencoding=utf-8
+set fileencodings=utf-8
+"" Fix backspace indent
+set backspace=indent,eol,start
+"" Tabs. May be overriten by autocmd rules
+set tabstop=4
+set softtabstop=0
+set shiftwidth=4
+set expandtab
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw only when we need to.
+"" Enable hidden buffers
+set hidden
+"" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+"" Encoding
+set nobomb
+set ttyfast
+"" Directories for swp files
+set nobackup
+set noswapfile
+set autowrite
+set updatecount=10
+set fileformats=unix,dos,mac
+set showcmd
+"" Visual Settings
+syntax on
+set ruler
+set relativenumber
+set number
+set numberwidth=5
+set listchars=tab:▸\ ,eol:¬
+set nolist
+set laststatus=2
+set noshowmode
+set title
+set titleold="Terminal"
+set titlestring=%F
+" END GENERAL VIM SETTINGS 1}}}
+
+" PLUGIN SETTINGS {{{1
 let g:go_fmt_command = "goimports"
-let g:rehash256 = 1
 
 " netrw settings
 let s:escape = 'substitute(escape(v:val, ".$~"), "*", ".*", "g")'
@@ -93,131 +159,62 @@ let g:netrw_list_hide =
       \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "$"'), ',') . ',^\.\.\=/\=$' .
       \ (get(g:, 'netrw_list_hide', '')[-strlen(s:dotfiles)-1:-1] ==# s:dotfiles ? ','.s:dotfiles : '')
 
-filetype plugin indent on
-
+let g:rehash256 = 1
 set omnifunc=syntaxcomplete#Complete
 set completefunc=syntaxcomplete#Complete
-set completeopt=menu
-
-set autoread
-
-set splitright
-
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-set visualbell t_vb=
-
-set keywordprg=":help"
-
-"" Copy/Paste/Cut
-if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
-endif
-
-"" Encoding
-if !has('nvim')
-    set encoding=utf-8
-endif
-set fileencoding=utf-8
-set fileencodings=utf-8
-
-"" Fix backspace indent
-set backspace=indent,eol,start
-
-"" Tabs. May be overriten by autocmd rules
-set tabstop=4
-set softtabstop=0
-set shiftwidth=4
-set expandtab
-
-set wildmenu            " visual autocomplete for command menu
-set lazyredraw          " redraw only when we need to.
-
-"" Enable hidden buffers
-set hidden
-
-"" Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
-" toggle gundo
-nnoremap <F5> :GundoToggle<CR>
-
-"" Encoding
-set nobomb
-set ttyfast
-
-"" Directories for swp files
-set nobackup
-set noswapfile
-set autowrite
-set updatecount=10
-
-set fileformats=unix,dos,mac
-set showcmd
-
-"" Visual Settings
-syntax on
-set ruler
-
-set relativenumber
-set number
-set numberwidth=5
-
-"Toggle relative numbering, and set to absolute on loss of focus or insert mode
-function! ToggleNumbersOn()
-    set nu!
-    set rnu
-endfunction
-function! ToggleRelativeOn()
-    set rnu!
-    set nu
-endfunction
-autocmd FocusLost * call ToggleRelativeOn()
-autocmd FocusGained * call ToggleRelativeOn()
-autocmd InsertEnter * call ToggleRelativeOn()
-autocmd InsertLeave * call ToggleRelativeOn()
-
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
-set nolist
-
-colorscheme molokai
-set t_Co=256
-" set cursorline
-
-set laststatus=2
-set noshowmode
-
-set title
-set titleold="Terminal"
-set titlestring=%F
 
 " statusline config
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 
-
-"" no one is really happy until you have this shortcuts
-cnoreabbrev W! w!
-cnoreabbrev Q! q!
-cnoreabbrev Qall! qall!
-cnoreabbrev Wq wq
-cnoreabbrev Wa wa
-cnoreabbrev wQ wq
-cnoreabbrev WQ wq
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qall qall
-
 let g:rustfmt_autosave = 1
-"*****************************************************************************
-"" Functions
-"*****************************************************************************
 
+" The Silver Searcher
+if executable('ag')
+    " Use ag over grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+    " ag is fast enough that CtrlP doesn't need to cache
+    let g:ctrlp_use_caching = 0
+endif
+
+let g:tagbar_autofocus = 1
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [  'p:package', 'i:imports:1', 'c:constants', 'v:variables',
+        \ 't:types',  'n:interfaces', 'w:fields', 'e:embedded', 'm:methods',
+        \ 'r:constructor', 'f:functions' ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : { 't' : 'ctype', 'n' : 'ntype' },
+    \ 'scope2kind' : { 'ctype' : 't', 'ntype' : 'n' },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
+
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
+
+" END PLUGIN SETTINGS 1}}}
+
+" COLORSCHEME {{{1
+colorscheme molokai
+set t_Co=256
+" END COLORSCHEME 1}}}
+
+" AUTOCOMMANDS {{{1
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
     autocmd!
@@ -257,18 +254,9 @@ augroup vimrc-ruby
     autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
 augroup END
 
-" The Silver Searcher
-if executable('ag')
-    " Use ag over grep
-    set grepprg=ag\ --nogroup\ --nocolor
+" 1}}}
 
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-    " ag is fast enough that CtrlP doesn't need to cache
-    let g:ctrlp_use_caching = 0
-endif
-
+" CUSTOM COMMANDS {{{1
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
@@ -276,14 +264,14 @@ if !exists(":DiffOrig")
     command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis
         \ | wincmd p | diffthis
 endif
+" END CUSTOM COMMANDS 1}}}
 
-"*****************************************************************************
-"" Mappings
-"*****************************************************************************
-
-"" Map leader to ,
+" VIM MAPPINGS {{{1
 let mapleader=' '
 nnoremap <leader>ev :e $MYVIMRC<CR>
+
+" toggle gundo
+nnoremap <F5> :GundoToggle<CR>
 
 " tab navigations
 nmap <tab> gt
@@ -317,42 +305,19 @@ if has('nvim')
     :tnoremap <A-k> <C-\><C-n><C-w>k
     :tnoremap <A-l> <C-\><C-n><C-w>l
 endif
-:nnoremap <A-h> <C-w>h
-:nnoremap <A-j> <C-w>j
-:nnoremap <A-k> <C-w>k
-:nnoremap <A-l> <C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 
-" Tagbar
-nmap <silent> <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [  'p:package', 'i:imports:1', 'c:constants', 'v:variables',
-        \ 't:types',  'n:interfaces', 'w:fields', 'e:embedded', 'm:methods',
-        \ 'r:constructor', 'f:functions' ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : { 't' : 'ctype', 'n' : 'ntype' },
-    \ 'scope2kind' : { 'ctype' : 't', 'ntype' : 'n' },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-    \ }
-
-let g:tagbar_type_ruby = {
-    \ 'kinds' : [
-        \ 'm:modules',
-        \ 'c:classes',
-        \ 'd:describes',
-        \ 'C:contexts',
-        \ 'f:methods',
-        \ 'F:singleton methods'
-    \ ]
-\ }
-
-" сохранить файл
+" save file
 imap <F2> <Esc>:w<CR>a
 nmap <F2> :w<CR>
 
-" сохранить все файлы
+" save all files
 imap <S-F2> <Esc>:wa<CR>a
 nmap <S-F2> :wa<CR>
+
+" Tagbar
+nmap <silent> <F4> :TagbarToggle<CR>
+" END VIM MAPPINGS 1}}}
