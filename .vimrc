@@ -25,7 +25,6 @@ Plug 'airblade/vim-gitgutter'
 " Find files/buffers
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dyng/ctrlsf.vim'
-Plug 'bling/vim-bufferline'
 
 " Status line
 Plug 'itchyny/lightline.vim'
@@ -142,8 +141,6 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-" turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
 
 " toggle gundo
 nnoremap <F5> :GundoToggle<CR>
@@ -247,7 +244,6 @@ augroup FileType go
     autocmd FileType go nmap gd <Plug>(go-def)
     autocmd FileType go nmap <Leader>dd <Plug>(go-def-vertical)
     autocmd FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
-    autocmd FileType go nmap <Leader>db <Plug>(go-doc-browser)
     autocmd FileType go nmap <Leader>gi <Plug>(go-info)
     autocmd FileType go nmap <leader>gr <Plug>(go-run)
     autocmd FileType go nmap <leader>rb <Plug>(go-build)
@@ -289,9 +285,6 @@ endif
 let mapleader=' '
 nnoremap <leader>ev :e $MYVIMRC<CR>
 
-" bind K to grep word under cursor
-nnoremap <Leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
 " tab navigations
 nmap <tab> gt
 nmap <s-tab> gT
@@ -307,10 +300,11 @@ nnoremap <silent> <UP>    :cprev<CR>
 nnoremap <silent> <DOWN>  :cnext<CR>
 nnoremap <silent> <LEFT>  :bp<CR>
 nnoremap <silent> <RIGHT> :bn<CR>
+nnoremap <leader>bb :ls<CR>:b<space>
 nnoremap <leader>bd :Bdelete<CR>
 
 "" Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
+nnoremap <silent> <leader><space> :noh<CR>
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
