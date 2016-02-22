@@ -98,7 +98,7 @@ set visualbell t_vb=
 set keywordprg=":help"
 "" Copy/Paste/Cut
 if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
+    set clipboard=unnamed,unnamedplus
 endif
 "" Encoding
 if !has('nvim')
@@ -244,6 +244,7 @@ augroup FileType go
     autocmd FileType go nmap <Leader>gi <Plug>(go-info)
     autocmd FileType go nmap <leader>gr <Plug>(go-run)
     autocmd FileType go nmap <leader>rb <Plug>(go-build)
+    autocmd FileType go nmap <leader>ii <Plug>(go-install)
     autocmd FileType go nmap <leader>gt <Plug>(go-test)
 augroup END
 
