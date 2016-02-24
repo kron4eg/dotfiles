@@ -150,7 +150,9 @@ set titlestring=%F
 " PLUGIN SETTINGS {{{1
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
-let g:go_dispatch_enabled = 1
+if !has('nvim')
+    let g:go_dispatch_enabled = 1
+endif
 let g:go_highlight_operators = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
