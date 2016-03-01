@@ -23,6 +23,7 @@ export MYSQL_PS1="\u@\h/\d> "
 export GREP_OPTIONS=--colour=auto
 export LANG=en_US.UTF-8
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 export EDITOR=nvim
 export ALTERNATE_EDITOR=vim
 export PAGER=less
