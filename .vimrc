@@ -321,14 +321,13 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-" save file
-imap <F2> <Esc>:w<CR>a
-nmap <F2> :w<CR>
-
-" save all files
-imap <S-F2> <Esc>:wa<CR>a
-nmap <S-F2> :wa<CR>
-
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
+
+" switch between alternate files
+nnoremap <BS> <C-^>
+
+" write on ENTER
+nnoremap <CR> :w<CR>
+
 " END VIM MAPPINGS 1}}}
