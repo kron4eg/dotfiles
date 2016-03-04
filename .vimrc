@@ -253,7 +253,8 @@ augroup FileType go
     autocmd FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
     autocmd FileType go nmap <Leader>gi <Plug>(go-info)
     autocmd FileType go nmap <leader>gr <Plug>(go-run)
-    autocmd FileType go nmap <leader>rb <Plug>(go-build)
+    autocmd FileType go nmap <leader>gb <Plug>(go-build)
+    autocmd FileType go nmap <Leader>gs <Plug>(go-implements)
     autocmd FileType go nmap <leader>ii <Plug>(go-install)
     autocmd FileType go nmap <leader>gt <Plug>(go-test)
 augroup END
