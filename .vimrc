@@ -300,6 +300,9 @@ nnoremap <silent> <RIGHT> :bn<CR>
 nnoremap <leader>b :ls<CR>:b<space>
 nnoremap <leader>c :Bdelete<CR>
 
+"" make
+nnoremap <leader>m :Make<CR>
+
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<CR>
 
