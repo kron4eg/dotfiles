@@ -63,6 +63,9 @@ Plug 'rust-lang/rust.vim'
 " Toml
 Plug 'cespare/vim-toml'
 
+" Ansible
+Plug 'pearofducks/ansible-vim'
+
 " Different
 Plug 'chrisbra/SudoEdit.vim'
 Plug 'vim-scripts/matchit.zip'
