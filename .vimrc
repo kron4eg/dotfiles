@@ -244,13 +244,14 @@ augroup END
 " vim-python
 augroup vimrc-python
     autocmd!
-    autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+    autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
         \ formatoptions+=croq softtabstop=4 smartindent
         \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
 augroup FileType go
     autocmd!
+    autocmd FileType go setlocal tabstop=4 shiftwidth=4 noexpandtab
     autocmd FileType go nmap gd <Plug>(go-def)
     autocmd FileType go nmap <Leader>dd <Plug>(go-def-vertical)
     autocmd FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
@@ -264,13 +265,13 @@ augroup END
 
 augroup yaml
     autocmd!
-    autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab
+    autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup vimrc-ruby
     autocmd!
-    autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
-    autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
+    autocmd BufNewFile,BufRead *.rb,*.gemspec setlocal filetype=ruby
+    autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 expandtab
 augroup END
 
 " 1}}}
