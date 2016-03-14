@@ -156,11 +156,11 @@ let g:go_auto_type_info = 0
 if !has('nvim')
     let g:go_dispatch_enabled = 1
 endif
-let g:go_highlight_operators = 1
+" let g:go_highlight_operators = 1
 let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
+" let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
+" let g:go_highlight_interfaces = 1
 let g:go_term_enabled = 1
 
 " netrw settings
@@ -262,6 +262,10 @@ augroup FileType go
     autocmd FileType go nmap <leader>gt <Plug>(go-test)
 augroup END
 
+augroup yaml
+    autocmd!
+    autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab
+augroup END
 
 augroup vimrc-ruby
     autocmd!
