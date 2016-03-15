@@ -333,6 +333,9 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
+" consistent mappig with C and D
+nnoremap Y y$
+
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 
