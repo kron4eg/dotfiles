@@ -41,6 +41,7 @@ Plug 'majutsushi/tagbar'
 
 " Go
 Plug 'fatih/vim-go'
+Plug 'garyburd/go-explorer'
 
 " Ruby
 Plug 'tpope/vim-rails'
