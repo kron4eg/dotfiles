@@ -163,6 +163,7 @@ let g:go_highlight_functions = 1
 let g:go_highlight_structs = 1
 " let g:go_highlight_interfaces = 1
 let g:go_term_enabled = 1
+let g:go_term_mode = "tabnew"
 
 " netrw settings
 let s:escape = 'substitute(escape(v:val, ".$~"), "*", ".*", "g")'
@@ -259,9 +260,9 @@ augroup FileType go
     autocmd FileType go nmap <Leader>gi <Plug>(go-info)
     autocmd FileType go nmap <leader>gr <Plug>(go-run)
     autocmd FileType go nmap <leader>gb <Plug>(go-build)
-    autocmd FileType go nmap <Leader>gs <Plug>(go-implements)
     autocmd FileType go nmap <leader>ii <Plug>(go-install)
     autocmd FileType go nmap <leader>gt <Plug>(go-test)
+    autocmd FileType go nmap <leader>ga <Plug>(go-alternate-edit)
 augroup END
 
 augroup yaml
