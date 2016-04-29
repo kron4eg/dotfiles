@@ -316,6 +316,9 @@ nnoremap <leader>m :Make<CR>
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<CR>
 
+"" Gstatus
+nnoremap <leader>fs :Gstatus<CR>
+
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
