@@ -59,4 +59,10 @@ if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
   source /usr/local/opt/chruby/share/chruby/auto.sh
 fi
 
+export NVM_DIR="$HOME/.nvm"
+
+if [ $(command -v brew) ]; then
+    . "$(brew --prefix nvm)/nvm.sh"
+fi
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
