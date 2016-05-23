@@ -202,6 +202,11 @@ if executable('ag')
     let g:ctrlp_use_caching = 0
 endif
 
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
+
 let g:tagbar_autofocus = 1
 
 let g:tagbar_type_go = {
