@@ -150,8 +150,8 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 set wrap
-set breakindent
-set breakindentopt=sbr
+" set breakindent
+" set breakindentopt=sbr
 set showbreak=↪>\
 " set sidescroll=1
 " END GENERAL VIM SETTINGS 1}}}
