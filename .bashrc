@@ -12,11 +12,6 @@ fi
 alias ll="ls -la --color=auto --group-directories-first"
 alias rgrep='fgrep -R'
 #alias irb='irb --readline -r irb/completion'
-alias siftnb='sift -n --binary-skip'
-
-#export CC=/usr/local/bin/gcc-5
-#export CPP=/usr/local/bin/cpp-5
-#export CXX=/usr/local/bin/g++-5
 
 export PATH=/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:$PATH:$HOME/bin
 export MYSQL_PS1="\u@\h/\d> "
@@ -30,7 +25,6 @@ export PAGER=less
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD}\007"'
 export HISTCONTROL="ignoredups"
 export HISTIGNORE="&:ls:[bf]g:exit"
-export BASHRC=1
 
 shopt -s histappend
 shopt -s cdspell
