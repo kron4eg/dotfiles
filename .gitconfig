@@ -33,6 +33,7 @@
 [diff]
 	algorithm = patience
 	tool = vimdiff
+	compactionHeuristic = true
 [core]
 	excludesfile = /Users/kron/.gitignore_global
 	editor = vim
