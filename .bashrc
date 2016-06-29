@@ -7,6 +7,7 @@ fi
 
 if [ ${OSTYPE} == "darwin15" ]; then
     alias ls="gls"
+    alias make="gmake"
 fi
 
 alias ll="ls -la --color=auto --group-directories-first"

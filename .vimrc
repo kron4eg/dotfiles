@@ -305,6 +305,9 @@ nnoremap <leader>ev :e $MYVIMRC<CR>
 " toggle gundo
 nnoremap <F5> :GundoToggle<CR>
 
+" netrw
+nnoremap <F3> :e.<CR>
+
 " tab navigations
 nmap <tab> gt
 nmap <s-tab> gT
