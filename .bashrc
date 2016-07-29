@@ -5,7 +5,7 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-if [ ${OSTYPE} == "darwin15" ]; then
+if [[ ${OSTYPE} == *"darwin"* ]]; then
     alias ls="gls"
     alias make="gmake"
 fi
@@ -20,8 +20,10 @@ export GREP_OPTIONS=--colour=auto
 export LANG=en_US.UTF-8
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-export EDITOR=nvim
-export ALTERNATE_EDITOR=vim
+export EDITOR=vim
+if [ $(command -v nvim) ]; then
+    export EDITOR=nvim
+fi
 export PAGER=less
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD}\007"'
 export HISTCONTROL="ignoredups"
@@ -34,7 +36,11 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-export PS1='[\u@\h:\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]]\n\$ '
+export PS1='[\u@\h:\w\[\033[01;31m\]\[\033[00m\]]\n\$ '
+
+if [ $(command -v git) ]; then
+    export PS1='[\u@\h:\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]]\n\$ '
+fi
 export PS2='continue-> '
 
 if [ -f /etc/bash_completion ]; then
