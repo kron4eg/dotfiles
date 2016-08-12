@@ -62,7 +62,7 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 
-if [ $(command -v brew) ]; then
+if [ $(command -v brew) ] && [ -f "$(brew --prefix nvm)/nvm.sh" ]; then
     . "$(brew --prefix nvm)/nvm.sh"
 fi
 
