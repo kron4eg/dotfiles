@@ -362,5 +362,6 @@ nnoremap <BS> <C-^>
 
 " write on ENTER
 nnoremap <CR> :w<CR>
+autocmd CmdwinEnter * map <buffer> <CR> <CR>
 
 " END VIM MAPPINGS 1}}}

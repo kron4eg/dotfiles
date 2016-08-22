@@ -67,3 +67,7 @@ if [ $(command -v brew) ] && [ -f "$(brew --prefix nvm)/nvm.sh" ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [ $(command -v direnv) ]; then
+    eval "$(direnv hook bash)"
+fi
