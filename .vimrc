@@ -167,8 +167,10 @@ let g:go_highlight_functions = 1
 " let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 " let g:go_highlight_interfaces = 1
+let g:go_highlight_build_constraints = 1
 " let g:go_term_enabled = 1
 " let g:go_term_mode = "tabnew"
+let g:go_list_type = "quickfix"
 
 " netrw settings
 let s:escape = 'substitute(escape(v:val, ".$~"), "*", ".*", "g")'
@@ -259,6 +261,11 @@ augroup vimrc-python
     autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
         \ formatoptions+=croq softtabstop=4 smartindent
         \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+augroup END
+
+augroup FileType json
+    autocmd!
+    autocmd FileType json setlocal tabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup FileType go
