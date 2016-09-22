@@ -28,6 +28,7 @@ export PAGER=less
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD}\007"'
 export HISTCONTROL="ignoredups"
 export HISTIGNORE="&:ls:[bf]g:exit"
+export NVM_DIR="$HOME/.nvm"
 
 shopt -s histappend
 shopt -s cdspell
@@ -47,8 +48,16 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-if [ $(command -v brew) ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+if [ $(command -v brew) ]; then
+    brw_pref=$(brew --prefix)
+
+    if [ -f $brw_pref/etc/bash_completion ]; then
+        . $brw_pref/etc/bash_completion
+    fi
+
+    if [ -f "$brw_pref/nvm.sh" ]; then
+        . "$brw_pref/nvm.sh"
+    fi
 fi
 
 if [ -f /usr/share/doc/tmux/examples/bash_completion_tmux.sh ]; then
@@ -58,12 +67,6 @@ fi
 if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
   source /usr/local/opt/chruby/share/chruby/chruby.sh
   source /usr/local/opt/chruby/share/chruby/auto.sh
-fi
-
-export NVM_DIR="$HOME/.nvm"
-
-if [ $(command -v brew) ] && [ -f "$(brew --prefix nvm)/nvm.sh" ]; then
-    . "$(brew --prefix nvm)/nvm.sh"
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
