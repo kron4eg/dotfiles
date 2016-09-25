@@ -101,6 +101,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 set visualbell t_vb=
 set keywordprg=":help"
 "" Copy/Paste/Cut
+set clipboard=unnamed
 if has('unnamedplus')
     set clipboard=unnamed,unnamedplus
 endif
