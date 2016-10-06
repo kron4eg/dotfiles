@@ -27,6 +27,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" Tree
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " Find files/buffers
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dyng/ctrlsf.vim'
@@ -314,7 +318,8 @@ nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <F5> :GundoToggle<CR>
 
 " netrw
-nnoremap <F3> :e.<CR>
+" nnoremap <F3> :e.<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
 
 " tab navigations
 nmap <tab> gt
