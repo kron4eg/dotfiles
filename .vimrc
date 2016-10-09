@@ -30,6 +30,7 @@ Plug 'airblade/vim-gitgutter'
 " Tree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jistr/vim-nerdtree-tabs'
 
 " Find files/buffers
 Plug 'ctrlpvim/ctrlp.vim'
@@ -186,6 +187,10 @@ let g:netrw_list_hide =
       \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "$"'), ',') . ',^\.\.\=/\=$' .
       \ (get(g:, 'netrw_list_hide', '')[-strlen(s:dotfiles)-1:-1] ==# s:dotfiles ? ','.s:dotfiles : '')
 
+
+let NERDTreeShowHidden=1
+let NERDTreeSortHiddenFirst=1
+
 let g:rehash256 = 1
 set omnifunc=syntaxcomplete#Complete
 set completefunc=syntaxcomplete#Complete
@@ -319,7 +324,7 @@ nnoremap <F5> :GundoToggle<CR>
 
 " netrw
 " nnoremap <F3> :e.<CR>
-nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeTabsToggle<CR>
 
 " tab navigations
 nmap <tab> gt
