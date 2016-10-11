@@ -326,6 +326,8 @@ nnoremap <F5> :GundoToggle<CR>
 " nnoremap <F3> :e.<CR>
 nnoremap <F3> :NERDTreeTabsToggle<CR>
 
+nnoremap <C-S-f> :CtrlSF 
+
 " tab navigations
 nmap <tab> gt
 nmap <s-tab> gT
