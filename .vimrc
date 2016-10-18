@@ -249,6 +249,11 @@ let g:tagbar_type_ruby = {
 " COLORSCHEME {{{1
 colorscheme molokai
 set t_Co=256
+if !has('nvim')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+end
 " END COLORSCHEME 1}}}
 
 " AUTOCOMMANDS {{{1
