@@ -16,7 +16,9 @@ endif
 " PLUGINS {{{1
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-sensible'
+if !has('nvim')
+    Plug 'tpope/vim-sensible'
+end
 
 " Colorscheme
 Plug 'tomasr/molokai'
@@ -331,7 +333,7 @@ nnoremap <F5> :GundoToggle<CR>
 " nnoremap <F3> :e.<CR>
 nnoremap <F3> :NERDTreeTabsToggle<CR>
 
-nnoremap <C-S-f> :CtrlSF 
+nnoremap <leader>sf :CtrlSF
 
 " tab navigations
 nmap <tab> gt
