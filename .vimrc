@@ -25,6 +25,8 @@ Plug 'tomasr/molokai'
 
 Plug 'tpope/vim-commentary'
 
+Plug 'fatih/vim-hclfmt'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
