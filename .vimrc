@@ -160,6 +160,8 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 set wrap
+set textwidth=80
+" set colorcolumn=80
 " set breakindent
 " set breakindentopt=sbr
 set showbreak=↪>\
