@@ -42,6 +42,15 @@ export PS1='[\u@\h:\w\[\033[01;31m\]\[\033[00m\]]\n\$ '
 if [ $(command -v git) ]; then
     export PS1='[\u@\h:\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]]\n\$ '
 fi
+
+if [ $(command -v minikube) ]; then
+    source <(minikube completion bash)
+fi
+
+if [ $(command -v kubectl) ]; then
+    source <(kubectl completion bash)
+fi
+
 export PS2='continue-> '
 
 if [ -f /etc/bash_completion ]; then
