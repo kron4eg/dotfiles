@@ -314,6 +314,8 @@ augroup vimrc-ruby
     autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 expandtab
 augroup END
 
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
 " 1}}}
 
 " CUSTOM COMMANDS {{{1
