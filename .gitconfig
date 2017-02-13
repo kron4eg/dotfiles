@@ -41,3 +41,5 @@
 	prompt = false
 [mergetool]
 	prompt = false
+[http "https://gopkg.in"]
+	followRedirects = true
