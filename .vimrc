@@ -147,6 +147,7 @@ set updatecount=10
 set fileformats=unix,dos,mac
 set showcmd
 "" Visual Settings
+let python_highlight_all=1
 syntax on
 set ruler
 set relativenumber
@@ -196,6 +197,7 @@ let g:netrw_list_hide =
 
 let NERDTreeShowHidden=1
 let NERDTreeSortHiddenFirst=1
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 
 let g:rehash256 = 1
 set omnifunc=syntaxcomplete#Complete
@@ -279,14 +281,12 @@ augroup END
 " vim-python
 augroup vimrc-python
     autocmd!
-    autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
-        \ formatoptions+=croq softtabstop=4 smartindent
-        \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+    autocmd FileType python setlocal autoindent softtabstop=4 formatoptions+=croq smartindent
 augroup END
 
 augroup FileType json
     autocmd!
-    autocmd FileType json setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd FileType json setlocal tabstop=2 shiftwidth=2
 augroup END
 
 augroup FileType go
