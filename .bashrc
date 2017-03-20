@@ -29,6 +29,7 @@ export PAGER=less
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD}\007"'
 export HISTCONTROL="ignoredups"
 export HISTIGNORE="&:ls:[bf]g:exit"
+export HISTSIZE=1000000
 export NVM_DIR="$HOME/.nvm"
 
 shopt -s histappend
@@ -70,6 +71,10 @@ if [ $(command -v brew) ]; then
     fi
 fi
 
+if [ $(command -v nodenv) ]; then
+    eval "$(nodenv init -)"
+fi
+
 if [ -f /usr/share/doc/tmux/examples/bash_completion_tmux.sh ]; then
     . /usr/share/doc/tmux/examples/bash_completion_tmux.sh
 fi
@@ -84,3 +89,5 @@ fi
 if [ $(command -v direnv) ]; then
     eval "$(direnv hook bash)"
 fi
+
+export PATH="$HOME/.yarn/bin:$PATH"
