@@ -61,11 +61,14 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'tpope/vim-endwise'
 Plug 'sunaku/vim-ruby-minitest'
 
-"Javascript
+" Javascript
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'leafgarland/typescript-vim'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
+
+" editorconfig.org support
+Plug 'editorconfig/editorconfig-vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -287,6 +290,11 @@ augroup END
 augroup FileType json
     autocmd!
     autocmd FileType json setlocal tabstop=2 shiftwidth=2
+augroup END
+
+augroup FileType html
+    autocmd!
+    autocmd FileType html setlocal tabstop=2 shiftwidth=2
 augroup END
 
 augroup FileType go
