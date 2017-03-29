@@ -34,6 +34,8 @@ export NVM_DIR="$HOME/.nvm"
 
 shopt -s histappend
 shopt -s cdspell
+set -o vi
+bind -m vi-insert "\C-l":clear-screen
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
