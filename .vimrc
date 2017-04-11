@@ -68,7 +68,7 @@ Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
 
 " editorconfig.org support
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
