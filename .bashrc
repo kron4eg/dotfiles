@@ -14,6 +14,7 @@ alias ll="ls -la --color=auto --group-directories-first"
 alias rgrep='fgrep -R'
 alias d-c='docker-compose'
 alias cr='compose-repo'
+alias n='nnn -d'
 #alias irb='irb --readline -r irb/completion'
 
 export PATH=/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:$PATH:$HOME/bin
@@ -21,7 +22,6 @@ export MYSQL_PS1="\u@\h/\d> "
 export GREP_OPTIONS=--colour=auto
 export LANG=en_US.UTF-8
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
-export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 export EDITOR=vim
 if [ $(command -v nvim) ]; then
     export EDITOR=nvim
