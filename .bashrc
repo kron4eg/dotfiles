@@ -23,9 +23,9 @@ export GREP_OPTIONS=--colour=auto
 export LANG=en_US.UTF-8
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export EDITOR=vim
-if [ $(command -v nvim) ]; then
-    export EDITOR=nvim
-fi
+# if [ $(command -v nvim) ]; then
+#     export EDITOR=nvim
+# fi
 export PAGER=less
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD}\007"'
 export HISTCONTROL="ignoredups"
@@ -52,9 +52,9 @@ fi
 #     source <(minikube completion bash)
 # fi
 
-if [ $(command -v kubectl) ]; then
-    source <(kubectl completion bash)
-fi
+# if [ $(command -v kubectl) ]; then
+#     source <(kubectl completion bash)
+# fi
 
 export PS2='continue-> '
 
@@ -69,28 +69,28 @@ if [ $(command -v brew) ]; then
         . $brw_pref/etc/bash_completion
     fi
 
-    if [ -f "$brw_pref/nvm.sh" ]; then
-        . "$brw_pref/nvm.sh"
-    fi
+    # if [ -f "$brw_pref/nvm.sh" ]; then
+    #     . "$brw_pref/nvm.sh"
+    # fi
 fi
 
-if [ $(command -v nodenv) ]; then
-    eval "$(nodenv init -)"
-fi
+# if [ $(command -v nodenv) ]; then
+#     eval "$(nodenv init -)"
+# fi
 
 if [ -f /usr/share/doc/tmux/examples/bash_completion_tmux.sh ]; then
     . /usr/share/doc/tmux/examples/bash_completion_tmux.sh
 fi
 
-if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
-  source /usr/local/opt/chruby/share/chruby/auto.sh
-fi
+# if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
+#   source /usr/local/opt/chruby/share/chruby/chruby.sh
+#   source /usr/local/opt/chruby/share/chruby/auto.sh
+# fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-if [ $(command -v direnv) ]; then
-    eval "$(direnv hook bash)"
-fi
+# if [ $(command -v direnv) ]; then
+#     eval "$(direnv hook bash)"
+# fi
 
-export PATH="$HOME/.yarn/bin:$PATH"
+# export PATH="$HOME/.yarn/bin:$PATH"
