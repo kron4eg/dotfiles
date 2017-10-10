@@ -66,6 +66,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'leafgarland/typescript-vim'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
+Plug 'posva/vim-vue'
 
 " editorconfig.org support
 Plug 'editorconfig/editorconfig-vim'
@@ -199,6 +200,7 @@ let g:netrw_list_hide =
       \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "$"'), ',') . ',^\.\.\=/\=$' .
       \ (get(g:, 'netrw_list_hide', '')[-strlen(s:dotfiles)-1:-1] ==# s:dotfiles ? ','.s:dotfiles : '')
 
+let g:ctrlp_extensions = ['tag']
 
 let NERDTreeShowHidden=1
 let NERDTreeSortHiddenFirst=1

@@ -26,6 +26,9 @@ export EDITOR=vim
 # if [ $(command -v nvim) ]; then
 #     export EDITOR=nvim
 # fi
+if [ "$VSCODE_CLI" == "1" ]; then
+    export EDITOR="code -w"
+fi
 export PAGER=less
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD}\007"'
 export HISTCONTROL="ignoredups"
@@ -94,3 +97,8 @@ fi
 # fi
 
 # export PATH="$HOME/.yarn/bin:$PATH"
+
+if [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc ]; then
+    source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
+    source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
+fi
