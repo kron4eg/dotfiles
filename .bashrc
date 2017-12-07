@@ -12,10 +12,6 @@ fi
 
 alias ll="ls -la --color=auto --group-directories-first"
 alias rgrep='fgrep -R'
-alias d-c='docker-compose'
-alias cr='compose-repo'
-alias n='nnn -d'
-#alias irb='irb --readline -r irb/completion'
 
 export PATH=/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:$PATH:$HOME/bin
 export MYSQL_PS1="\u@\h/\d> "

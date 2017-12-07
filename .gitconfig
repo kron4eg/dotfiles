@@ -19,27 +19,21 @@
 	mt = mergetool
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	gg = grep --break --heading -n
-
 [branch]
 	autosetupmerge = true
 [push]
 	default = nothing
-[url "git@github.com:"]
-	insteadOf = gh:
-[url "git@bitbucket.org:"]
-	insteadOf = bb:
-[url "git@git.assembla.com:"]
-	insteadOf = as:
 [diff]
 	algorithm = patience
 	tool = vimdiff
 	compactionHeuristic = true
 [core]
 	excludesfile = /Users/kron/.gitignore_global
-	editor = vim
 [difftool]
 	prompt = false
 [mergetool]
 	prompt = false
 [http "https://gopkg.in"]
 	followRedirects = true
+[tig]
+    line-graphics = utf-8
