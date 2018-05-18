@@ -1,6 +1,7 @@
 [user]
 	name = Artiom Diomin
 	email = kron82@gmail.com
+	signingkey = 933D3F43BE623023
 [color]
 	diff = auto
 	status = auto
@@ -37,3 +38,5 @@
 	followRedirects = true
 [tig]
     line-graphics = utf-8
+[commit]
+	gpgsign = true
