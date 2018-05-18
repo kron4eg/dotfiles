@@ -47,13 +47,13 @@ if [ $(command -v git) ]; then
     export PS1='[\u@\h:\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]]\n\$ '
 fi
 
-# if [ $(command -v minikube) ]; then
-#     source <(minikube completion bash)
-# fi
 
-# if [ $(command -v kubectl) ]; then
-#     source <(kubectl completion bash)
-# fi
+if [ $(command -v kubectl) ]; then
+    if [ -f ~/.fubectl.source ]; then
+        source ~/.fubectl.source
+        source <(k completion bash | sed s/kubectl/k/g)
+    fi
+fi
 
 export PS2='continue-> '
 
@@ -67,15 +67,7 @@ if [ $(command -v brew) ]; then
     if [ -f $brw_pref/etc/bash_completion ]; then
         . $brw_pref/etc/bash_completion
     fi
-
-    # if [ -f "$brw_pref/nvm.sh" ]; then
-    #     . "$brw_pref/nvm.sh"
-    # fi
 fi
-
-# if [ $(command -v nodenv) ]; then
-#     eval "$(nodenv init -)"
-# fi
 
 if [ -f /usr/share/doc/tmux/examples/bash_completion_tmux.sh ]; then
     . /usr/share/doc/tmux/examples/bash_completion_tmux.sh
@@ -87,10 +79,6 @@ fi
 # fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# if [ $(command -v direnv) ]; then
-#     eval "$(direnv hook bash)"
-# fi
 
 # export PATH="$HOME/.yarn/bin:$PATH"
 
