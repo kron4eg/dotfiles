@@ -51,8 +51,10 @@ fi
 if [ $(command -v kubectl) ]; then
     if [ -f ~/.fubectl.source ]; then
         source ~/.fubectl.source
-        source <(k completion bash | sed s/kubectl/k/g)
+    else
+        alias k=kubectl
     fi
+    source <(k completion bash | sed s/kubectl/k/g)
 fi
 
 export PS2='continue-> '
