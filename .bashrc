@@ -55,6 +55,11 @@ if [ $(command -v kubectl) ]; then
         alias k=kubectl
     fi
     source <(k completion bash | sed s/kubectl/k/g)
+
+    if [[ -f "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]]; then
+        source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+        PS1='$(kube_ps1)'$PS1
+    fi
 fi
 
 export PS2='continue-> '
