@@ -22,7 +22,10 @@ export EDITOR=vim
 # if [ $(command -v nvim) ]; then
 #     export EDITOR=nvim
 # fi
-if [ "$VSCODE_CLI" == "1" ]; then
+if [[ "$VSCODE_CLI" == "1" ]]; then
+    export EDITOR="code -w"
+fi
+if [[ "$TERM_PROGRAM" = "vscode" ]]; then
     export EDITOR="code -w"
 fi
 export PAGER=less
@@ -41,10 +44,10 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-export PS1='[\u@\h:\w\[\033[01;31m\]\[\033[00m\]]\n\$ '
+export PS1='\w\n\$ '
 
 if [ $(command -v git) ]; then
-    export PS1='[\u@\h:\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]]\n\$ '
+    export PS1='\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\n\$ '
 fi
 
 
@@ -59,6 +62,7 @@ if [ $(command -v kubectl) ]; then
     if [[ -f "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]]; then
         source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
         PS1='$(kube_ps1)'$PS1
+        kubeoff
     fi
 fi
 
