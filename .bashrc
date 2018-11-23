@@ -8,6 +8,7 @@ fi
 if [[ ${OSTYPE} == *"darwin"* ]]; then
     alias ls="gls"
     alias make="gmake"
+    alias awk="gawk"
 fi
 
 alias ll="ls -la --color=auto --group-directories-first"
@@ -19,6 +20,7 @@ export GREP_OPTIONS=--colour=auto
 export LANG=en_US.UTF-8
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export EDITOR=vim
+export HOMEBREW_NO_ANALYTICS=1
 # if [ $(command -v nvim) ]; then
 #     export EDITOR=nvim
 # fi

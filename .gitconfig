@@ -29,7 +29,7 @@
 	tool = vimdiff
 	compactionHeuristic = true
 [core]
-	excludesfile = /Users/kron/.gitignore_global
+	excludesfile = /Users/kron/.gitignore
 [difftool]
 	prompt = false
 [mergetool]
@@ -40,3 +40,5 @@
     line-graphics = utf-8
 [commit]
 	gpgsign = true
+[url "ssh://git@github.com/kubermatic/"]
+insteadOf = https://github.com/kubermatic/

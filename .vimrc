@@ -94,6 +94,7 @@ Plug 'tpope/vim-surround'
 Plug 'moll/vim-bbye'
 Plug 'vim-utils/vim-man'
 Plug 'junkblocker/patchreview-vim'
+Plug 'ledger/vim-ledger'
 
 Plug 'scrooloose/syntastic'
 
