@@ -52,6 +52,9 @@ if [ $(command -v git) ]; then
     export PS1='\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\n\$ '
 fi
 
+if [ $(command -v direnv) ]; then
+    eval "$(direnv hook bash)"
+fi
 
 if [ $(command -v kubectl) ]; then
     if [ -f ~/.fubectl.source ]; then
