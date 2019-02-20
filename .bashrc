@@ -21,9 +21,10 @@ export LANG=en_US.UTF-8
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export EDITOR=vim
 export HOMEBREW_NO_ANALYTICS=1
-# if [ $(command -v nvim) ]; then
-#     export EDITOR=nvim
-# fi
+export NNN_RESTRICT_NAV_OPEN=1
+export NNN_RESTRICT_0B=1
+stty dsusp undef
+
 if [[ "$VSCODE_CLI" == "1" ]]; then
     export EDITOR="code -w"
 fi
