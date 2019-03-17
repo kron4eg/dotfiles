@@ -23,6 +23,7 @@ export EDITOR=vim
 export HOMEBREW_NO_ANALYTICS=1
 export NNN_RESTRICT_NAV_OPEN=1
 export NNN_RESTRICT_0B=1
+export NNN_SHOW_HIDDEN=1
 stty dsusp undef
 
 if [[ "$VSCODE_CLI" == "1" ]]; then

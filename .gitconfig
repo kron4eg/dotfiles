@@ -42,3 +42,5 @@
 	gpgsign = true
 [url "ssh://git@github.com/kubermatic/"]
 insteadOf = https://github.com/kubermatic/
+[rebase]
+	autoStash = true
