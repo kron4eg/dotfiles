@@ -71,6 +71,7 @@ if [ $(command -v kubectl) ]; then
         PS1='$(kube_ps1)'$PS1
         kubeoff
     fi
+    export PATH="${HOME}/.krew/bin:$PATH"
 fi
 
 export PS2='continue-> '
