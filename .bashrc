@@ -11,7 +11,15 @@ if [[ ${OSTYPE} == *"darwin"* ]]; then
     alias awk="gawk"
 fi
 
-alias ll="ls -la --color=auto --group-directories-first"
+if [ $(command -v exa) ]; then
+    alias ll="exa --group-directories-first --long --all"
+else
+    alias ll="ls -la --color=auto --group-directories-first"
+fi
+
+if [ $(command -v bat) ]; then
+    alias cat="bat"
+fi
 alias rgrep='fgrep -R'
 
 export PATH=/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:$PATH:$HOME/bin
@@ -105,3 +113,5 @@ if [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.i
     source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
     source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
 fi
+
+complete -C /usr/local/bin/mc mc
