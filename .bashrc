@@ -56,6 +56,17 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+n() {
+    export NNN_TMPFILE=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd
+
+    nnn "$@"
+
+    if [ -f $NNN_TMPFILE ]; then
+            . $NNN_TMPFILE
+            rm -f $NNN_TMPFILE > /dev/null
+    fi
+}
+
 export PS1='\w\n\$ '
 
 if [ $(command -v git) ]; then
