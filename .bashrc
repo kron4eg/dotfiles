@@ -29,6 +29,7 @@ export LANG=en_US.UTF-8
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export EDITOR=vim
 export HOMEBREW_NO_ANALYTICS=1
+export GOPROXY="https://proxy.golang.org"
 export NNN_RESTRICT_NAV_OPEN=1
 export NNN_RESTRICT_0B=1
 export NNN_SHOW_HIDDEN=1
