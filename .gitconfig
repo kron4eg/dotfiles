@@ -28,6 +28,7 @@
 	algorithm = patience
 	tool = vimdiff
 	compactionHeuristic = true
+	noprefix = true
 [core]
 	excludesfile = /Users/kron/.gitignore
 [difftool]

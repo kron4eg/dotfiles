@@ -21,8 +21,10 @@ if [ $(command -v bat) ]; then
     alias cat="bat"
 fi
 alias rgrep='fgrep -R'
+# this alias makes it so that watch can be used with other aliases, like "watch k get pods"
+alias watch='watch '
 
-export PATH=/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:$PATH:$HOME/bin
+export PATH=/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/usr/local/opt/python/libexec/bin:$PATH:$HOME/bin
 export MYSQL_PS1="\u@\h/\d> "
 export GREP_OPTIONS=--colour=auto
 export LANG=en_US.UTF-8
