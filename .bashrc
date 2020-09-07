@@ -9,6 +9,7 @@ if [[ ${OSTYPE} == *"darwin"* ]]; then
     alias ls="gls"
     alias make="gmake"
     alias awk="gawk"
+    alias date="gdate"
 fi
 
 if [ $(command -v exa) ]; then
