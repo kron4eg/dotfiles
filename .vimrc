@@ -98,7 +98,7 @@ Plug 'ledger/vim-ledger'
 
 Plug 'scrooloose/syntastic'
 
-Plug 'Raimondi/delimitMate'
+" Plug 'Raimondi/delimitMate'
 
 " Databases
 Plug 'vim-scripts/dbext.vim'

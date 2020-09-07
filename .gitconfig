@@ -30,7 +30,8 @@
 	compactionHeuristic = true
 	noprefix = true
 [core]
-	excludesfile = /Users/kron/.gitignore
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
 [difftool]
 	prompt = false
 [mergetool]
