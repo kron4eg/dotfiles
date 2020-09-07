@@ -41,7 +41,7 @@
     line-graphics = utf-8
 [commit]
 	gpgsign = true
-[url "ssh://git@github.com/kubermatic/"]
-insteadOf = https://github.com/kubermatic/
+; [url "ssh://git@github.com/kubermatic/"]
+; insteadOf = https://github.com/kubermatic/
 [rebase]
 	autoStash = true

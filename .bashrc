@@ -98,17 +98,8 @@ fi
 
 export PS2='continue-> '
 
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
-
-if [ $(command -v brew) ]; then
-    brw_pref=$(brew --prefix)
-
-    if [ -f $brw_pref/etc/bash_completion ]; then
-        . $brw_pref/etc/bash_completion
-    fi
-fi
+[[ -f "/etc/bash_completion" ]] && . "/etc/bash_completion"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 if [ -f /usr/share/doc/tmux/examples/bash_completion_tmux.sh ]; then
     . /usr/share/doc/tmux/examples/bash_completion_tmux.sh
