@@ -111,7 +111,8 @@ fi
 #   source /usr/local/opt/chruby/share/chruby/auto.sh
 # fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f /usr/local/opt/fzf/shell/completion.bash ] && source /usr/local/opt/fzf/shell/completion.bash
+[ -f /usr/local/opt/fzf/shell/key-bindings.bash ] && source /usr/local/opt/fzf/shell/key-bindings.bash
 
 # export PATH="$HOME/.yarn/bin:$PATH"
 
