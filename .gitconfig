@@ -46,3 +46,5 @@
 ; insteadOf = https://github.com/kubermatic/
 [rebase]
 	autoStash = true
+[pull]
+	ff = only
