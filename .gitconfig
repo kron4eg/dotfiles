@@ -48,3 +48,5 @@
 	autoStash = true
 [pull]
 	ff = only
+[checkout]
+	defaultRemote = origin
