@@ -31,7 +31,7 @@ alias rgrep='fgrep -R'
 # this alias makes it so that watch can be used with other aliases, like "watch k get pods"
 alias watch='watch '
 
-export PATH=/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/usr/local/opt/python/libexec/bin:$PATH:$HOME/bin
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/usr/local/opt/python/libexec/bin:$PATH
 export MYSQL_PS1="\u@\h/\d> "
 export LANG=en_US.UTF-8
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -115,6 +115,8 @@ fi
 #   source /usr/local/opt/chruby/share/chruby/chruby.sh
 #   source /usr/local/opt/chruby/share/chruby/auto.sh
 # fi
+
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 [ -f /usr/local/opt/fzf/shell/completion.bash ] && source /usr/local/opt/fzf/shell/completion.bash
 [ -f /usr/local/opt/fzf/shell/key-bindings.bash ] && source /usr/local/opt/fzf/shell/key-bindings.bash
