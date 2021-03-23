@@ -164,6 +164,14 @@ klog() {
     kubectl logs -n ${arg_pair} -c "${container_choosen}" --tail="${line_count}" "$@"
 }
 
+# [kkonfig] select a file in current directory and set it as $KUBECONFIG
+kkonfig() {
+    local kubeconfig
+    kubeconfig=$(_inline_fzf_nh) || return
+    export KUBECONFIG=$PWD/$kubeconfig
+    exec $SHELL
+}
+
 # [kex] execute command in container
 kex() {
     [ -z "$1" ] && printf "kex: missing argument(s).\nUsage: kex COMMAND [arguments]\n" && return 255
@@ -304,6 +312,15 @@ kinstall() {
 # [kupdate] Updates kubectl plugins
 kupdate() {
     kubectl krew upgrade
+}
+
+#### Kubermatic KKP specific
+# [kkp-cluster] Kubermatic KKP - extracts kubeconfig of user cluster and connects it in a new bash
+kkp-cluster () {
+	TMP_KUBECONFIG=$(mktemp)
+	local cluster="$(kubectl get cluster | _inline_fzf | awk '{print $1}')"
+	kubectl get secret admin-kubeconfig -n cluster-$cluster -o go-template='{{ index .data "kubeconfig" }}' | base64 -d > $TMP_KUBECONFIG
+	KUBECONFIG=$TMP_KUBECONFIG $SHELL
 }
 
 # [khelp] show this help message
