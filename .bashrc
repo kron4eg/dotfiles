@@ -52,14 +52,14 @@ fi
 export PAGER=less
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD}\007"'
 export HISTCONTROL="ignoredups"
-export HISTIGNORE="&:ls:[bf]g:exit"
+export HISTIGNORE='pwd:exit:fg:bg:top:clear:history:ll:ls:uptime:df'
 export HISTSIZE=1000000
 export NVM_DIR="$HOME/.nvm"
 
 shopt -s histappend
 shopt -s cdspell
-set -o vi
-bind -m vi-insert "\C-l":clear-screen
+# set -o vi
+# bind -m vi-insert "\C-l":clear-screen
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'

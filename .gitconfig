@@ -50,3 +50,5 @@
 	ff = only
 [checkout]
 	defaultRemote = origin
+[init]
+	defaultBranch = main
