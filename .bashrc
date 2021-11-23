@@ -12,6 +12,18 @@ if [[ ${OSTYPE} == *"darwin"* ]]; then
     alias date="gdate"
 fi
 
+case ${OSTYPE} in
+    darwin*)
+    alias ls="gls"
+    alias make="gmake"
+    alias awk="gawk"
+    alias date="gdate"
+stty dsusp undef
+    ;;
+linux-gnu*)
+
+esac
+
 if [ $(command -v exa) ]; then
     alias ll="exa --group-directories-first --long --all"
 else
@@ -41,7 +53,6 @@ export GOPROXY="https://proxy.golang.org"
 export NNN_RESTRICT_NAV_OPEN=1
 export NNN_RESTRICT_0B=1
 export NNN_SHOW_HIDDEN=1
-stty dsusp undef
 
 if [[ "$VSCODE_CLI" == "1" ]]; then
     export EDITOR="code -w"
