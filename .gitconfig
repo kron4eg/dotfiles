@@ -24,6 +24,7 @@
 	autosetupmerge = true
 [push]
 	default = nothing
+	followTags = true
 [diff]
 	algorithm = patience
 	tool = vimdiff

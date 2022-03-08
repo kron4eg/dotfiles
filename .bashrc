@@ -133,7 +133,7 @@ fi
 [ -f /usr/local/opt/fzf/shell/key-bindings.bash ] && source /usr/local/opt/fzf/shell/key-bindings.bash
 [ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
 
-# export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 
 if [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc ]; then
 	source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
@@ -141,3 +141,4 @@ if [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.i
 fi
 
 complete -C /usr/local/bin/mc mc
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
