@@ -24,6 +24,10 @@ linux-gnu*) ;;
 
 esac
 
+if [[ ${TERM} == "xterm-kitty" ]]; then
+	alias ssh="kitty +kitten ssh"
+fi
+
 if [ $(command -v exa) ]; then
 	alias ll="exa --group-directories-first --long --all"
 else
@@ -32,6 +36,10 @@ fi
 
 if [ $(command -v bat) ]; then
 	alias cat="bat"
+fi
+
+if [ $(command -v xdg-open) ]; then
+	alias open=xdg-open
 fi
 
 alias grep="grep --colour=auto"
