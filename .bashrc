@@ -5,13 +5,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [[ ${OSTYPE} == *"darwin"* ]]; then
-	alias ls="gls"
-	alias make="gmake"
-	alias awk="gawk"
-	alias date="gdate"
-fi
-
 case ${OSTYPE} in
 darwin*)
 	alias ls="gls"
