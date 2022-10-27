@@ -29,10 +29,15 @@ fi
 
 if [ $(command -v bat) ]; then
 	alias cat="bat"
+	export FZF_CTRL_T_OPTS="--height 100% --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 fi
 
 if [ $(command -v xdg-open) ]; then
 	alias open=xdg-open
+fi
+
+if [ $(command -v rg) ]; then
+	export FZF_DEFAULT_COMMAND="rg --files --ignore-vcs --hidden"
 fi
 
 alias grep="grep --colour=auto"
