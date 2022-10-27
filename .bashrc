@@ -148,3 +148,17 @@ fi
 
 complete -C /usr/local/bin/mc mc
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+fif() {
+	rg \
+		--line-number \
+		--no-column \
+		--no-heading \
+		--fixed-strings \
+		--ignore-case \
+		--hidden \
+		--follow \
+		--glob '!.git/*' "$1" |
+		awk -F ":" '/1/ {start = $2<5 ? 0 : $2 - 5; end = $2 + 5; print $1 " " $2 " " start ":" end}' |
+		fzf --preview 'bat --color always {1} --highlight-line {2} --line-range {3}' --preview-window wrap
+}
