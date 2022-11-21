@@ -1,0 +1,23 @@
+window:
+  decorations: none
+  dynamic_title: true
+
+scrolling:
+  history: 10000
+
+font:
+  normal:
+    family: "JetBrains Mono NL"
+  size: 9.0
+
+colors:
+  primary:
+    background: '#121212'
+
+selection:
+  save_to_clipboard: true
+
+shell:
+  program: /bin/bash
+  args:
+    - --login
