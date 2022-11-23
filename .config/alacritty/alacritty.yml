@@ -1,6 +1,9 @@
 window:
   decorations: none
   dynamic_title: true
+  padding:
+    x: 1
+    y: 1
 
 scrolling:
   history: 10000
@@ -21,3 +24,11 @@ shell:
   program: /bin/bash
   args:
     - --login
+draw_bold_text_with_bright_colors: true
+
+cursor:
+  style:
+    blinking: On
+
+key_bindings:
+  - { key: N, mods: Control, action: CreateNewWindow }
