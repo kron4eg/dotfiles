@@ -30,5 +30,5 @@ cursor:
   style:
     blinking: On
 
-key_bindings:
-  - { key: N, mods: Control, action: CreateNewWindow }
+# key_bindings:
+# - { key: N, mods: Control, action: CreateNewWindow }

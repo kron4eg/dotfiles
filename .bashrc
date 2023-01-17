@@ -94,7 +94,7 @@ function _update_ps1() {
 		-cwd-mode=plain \
 		-hostname-only-if-ssh \
 		-git-mode=simple \
-		-modules="termtitle,direnv,kube,host,ssh,cwd,perms,git,jobs,exit,root" \
+		-modules="termtitle,direnv,kube,host,ssh,cwd,perms,git,jobs,exit" \
 		-error=$? \
 		-jobs=$(jobs -p | wc -l))"
 
