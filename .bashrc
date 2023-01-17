@@ -19,10 +19,6 @@ linux-gnu*) ;;
 
 esac
 
-if [[ ${TERM} == "xterm-kitty" ]]; then
-	alias ssh="kitty +kitten ssh"
-fi
-
 if [ $(command -v exa) ]; then
 	alias ll="exa --group-directories-first --long --all"
 else
@@ -56,7 +52,7 @@ export LANG=en_US.UTF-8
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export EDITOR=vim
 export HOMEBREW_NO_ANALYTICS=1
-export GOPROXY="https://proxy.golang.org"
+# export GOPROXY="https://proxy.golang.org"
 export NNN_RESTRICT_NAV_OPEN=1
 export NNN_RESTRICT_0B=1
 export NNN_SHOW_HIDDEN=1
@@ -78,10 +74,6 @@ shopt -s cdspell
 # set -o vi
 # bind -m vi-insert "\C-l":clear-screen
 
-parse_git_branch() {
-	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
 n() {
 	export NNN_TMPFILE=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd
 
@@ -95,8 +87,27 @@ n() {
 
 export PS1='\w\n\$ '
 
-if [ $(command -v git) ]; then
-	export PS1='\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\n\$ '
+function _update_ps1() {
+	PS1="$(powerline-go \
+		-newline \
+		-condensed \
+		-cwd-mode=plain \
+		-hostname-only-if-ssh \
+		-git-mode=simple \
+		-modules="termtitle,direnv,kube,host,ssh,cwd,perms,git,jobs,exit,root" \
+		-error=$? \
+		-jobs=$(jobs -p | wc -l))"
+
+	# Uncomment the following line to automatically clear errors after showing
+	# them once. This not only clears the error for powerline-go, but also for
+	# everything else you run in that shell. Don't enable this if you're not
+	# sure this is what you want.
+
+	#set "?"
+}
+
+if [ "$TERM" != "linux" ] && [ $(command -v powerline-go) ]; then
+	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
 if [ $(command -v direnv) ]; then
