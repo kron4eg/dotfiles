@@ -5,6 +5,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+export TERM=xterm-256color
 export PATH=/usr/bin:/usr/sbin:$HOME/bin:/usr/local/bin:/usr/local/sbin
 
 case ${OSTYPE} in
