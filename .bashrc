@@ -36,7 +36,7 @@ if [ $(command -v xdg-open) ]; then
 fi
 
 if [ $(command -v rg) ]; then
-	export FZF_DEFAULT_COMMAND="rg --files --ignore-vcs --hidden"
+	export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
 fi
 
 alias grep="grep --colour=auto"
