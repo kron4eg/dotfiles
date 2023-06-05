@@ -6,7 +6,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 export TERM=xterm-256color
-export PATH=/usr/bin:/usr/sbin:$HOME/bin:/usr/local/bin:/usr/local/sbin
+export PATH=/usr/bin:/usr/sbin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin
 
 case ${OSTYPE} in
 darwin*)
@@ -47,6 +47,7 @@ fi
 alias rgrep='fgrep -R'
 # this alias makes it so that watch can be used with other aliases, like "watch k get pods"
 alias watch='watch '
+alias k9s='k9s --headless'
 
 export MYSQL_PS1="\u@\h/\d> "
 export LANG=en_US.UTF-8
