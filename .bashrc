@@ -48,6 +48,7 @@ alias rgrep='fgrep -R'
 # this alias makes it so that watch can be used with other aliases, like "watch k get pods"
 alias watch='watch '
 alias k9s='k9s --headless'
+alias kamal="docker run -it --rm -v '${PWD}:/workdir' -v '/run/host-services/ssh-auth.sock:/run/host-services/ssh-auth.sock' -e SSH_AUTH_SOCK='/run/host-services/ssh-auth.sock' -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/basecamp/kamal:latest"
 
 export MYSQL_PS1="\u@\h/\d> "
 export LANG=en_US.UTF-8
@@ -147,6 +148,9 @@ fi
 # fi
 
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+DENO_INSTALL="/home/kron/.deno"
+[ -d "$DENO_INSTALL" ] && export PATH="$DENO_INSTALL/bin:$PATH"
 
 [ -f /usr/local/opt/fzf/shell/completion.bash ] && source /usr/local/opt/fzf/shell/completion.bash
 [ -f /usr/local/opt/fzf/shell/key-bindings.bash ] && source /usr/local/opt/fzf/shell/key-bindings.bash
