@@ -49,6 +49,8 @@ alias rgrep='fgrep -R'
 alias watch='watch '
 alias k9s='k9s --headless'
 alias kamal="docker run -it --rm -v '${PWD}:/workdir' -v '/run/host-services/ssh-auth.sock:/run/host-services/ssh-auth.sock' -e SSH_AUTH_SOCK='/run/host-services/ssh-auth.sock' -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/basecamp/kamal:latest"
+alias aws-select-profile='export AWS_PROFILE=$(aws configure list-profiles | fzf)'
+alias aws-select-region='export AWS_DEFAULT_REGION=$(aws ec2 describe-regions | jq -r ".Regions[].RegionName" | fzf)'
 
 export MYSQL_PS1="\u@\h/\d> "
 export LANG=en_US.UTF-8
@@ -97,7 +99,7 @@ function _update_ps1() {
 		-cwd-mode=plain \
 		-hostname-only-if-ssh \
 		-git-mode=simple \
-		-modules="termtitle,direnv,kube,host,ssh,cwd,perms,git,jobs,exit" \
+		-modules="aws,termtitle,direnv,kube,host,ssh,cwd,perms,git,jobs,exit" \
 		-error=$? \
 		-jobs=$(jobs -p | wc -l))"
 
