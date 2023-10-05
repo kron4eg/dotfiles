@@ -39,12 +39,8 @@
 	prompt = false
 [http "https://gopkg.in"]
 	followRedirects = true
-[tig]
-    line-graphics = utf-8
 [commit]
 	gpgsign = true
-; [url "ssh://git@github.com/kubermatic/"]
-; insteadOf = https://github.com/kubermatic/
 [rebase]
 	autoStash = true
 [pull]
