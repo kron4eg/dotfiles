@@ -1,4 +1,6 @@
-# .bashrc
+#!/usr/bin/env bash
+
+#.bashrc
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -20,27 +22,27 @@ linux-gnu*) ;;
 
 esac
 
-if [ $(command -v exa) ]; then
+if command -v exa &>/dev/null; then
 	alias ll="exa --group-directories-first --long --all"
 else
 	alias ll="ls -la --color=auto --group-directories-first"
 fi
 
-if [ $(command -v bat) ]; then
+if command -v bat &>/dev/null; then
 	alias cat="bat"
 	export FZF_CTRL_T_OPTS="--height 100% --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 fi
 
-if [ $(command -v xdg-open) ]; then
+if command -v xdg-open &>/dev/null; then
 	alias open=xdg-open
 fi
 
-if [ $(command -v rg) ]; then
+if command -v rg &>/dev/null; then
 	export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden --follow"
 fi
 
 alias grep="grep --colour=auto"
-if [[ $(command -v ggrep) ]]; then
+if command -v ggrep &>/dev/null; then
 	alias grep="ggrep --colour=auto"
 fi
 
@@ -58,9 +60,6 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export EDITOR=vim
 export HOMEBREW_NO_ANALYTICS=1
 # export GOPROXY="https://proxy.golang.org"
-export NNN_RESTRICT_NAV_OPEN=1
-export NNN_RESTRICT_0B=1
-export NNN_SHOW_HIDDEN=1
 
 if [[ "$VSCODE_CLI" == "1" ]]; then
 	export EDITOR="code -w"
@@ -82,17 +81,6 @@ shopt -s nocaseglob
 # set -o vi
 # bind -m vi-insert "\C-l":clear-screen
 
-n() {
-	export NNN_TMPFILE=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd
-
-	nnn "$@"
-
-	if [ -f $NNN_TMPFILE ]; then
-		. $NNN_TMPFILE
-		rm -f $NNN_TMPFILE >/dev/null
-	fi
-}
-
 export PS1='\w\n\$ '
 
 function _update_ps1() {
@@ -102,7 +90,7 @@ function _update_ps1() {
 		-cwd-mode=plain \
 		-hostname-only-if-ssh \
 		-git-mode=simple \
-		-modules="aws,termtitle,direnv,kube,host,ssh,cwd,perms,git,jobs,exit" \
+		-modules="aws,termtitle,direnv,kube,host,ssh,cwd,perms,git,venv,jobs,exit" \
 		-error=$? \
 		-jobs=$(jobs -p | wc -l))"
 
@@ -114,15 +102,15 @@ function _update_ps1() {
 	#set "?"
 }
 
-if [ "$TERM" != "linux" ] && [ $(command -v powerline-go) ]; then
+if [ "$TERM" != "linux" ] && command -v powerline-go &>/dev/null; then
 	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-if [ $(command -v direnv) ]; then
+if command -v direnv &>/dev/null; then
 	eval "$(direnv hook bash)"
 fi
 
-if [ $(command -v kubectl) ]; then
+if command -v kubectl &>/dev/null; then
 	if [ -f ~/.fubectl.source ]; then
 		source ~/.fubectl.source
 	else
