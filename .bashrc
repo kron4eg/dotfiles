@@ -74,8 +74,11 @@ export HISTIGNORE='pwd:exit:fg:bg:top:clear:history:ll:ls:uptime:df'
 export HISTSIZE=1000000
 export NVM_DIR="$HOME/.nvm"
 
-shopt -s histappend
+shopt -s autocd
 shopt -s cdspell
+shopt -s histappend
+shopt -s nocaseglob
+
 # set -o vi
 # bind -m vi-insert "\C-l":clear-screen
 
