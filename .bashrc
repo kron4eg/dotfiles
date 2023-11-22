@@ -28,6 +28,10 @@ else
 	alias ll="ls -la --color=auto --group-directories-first"
 fi
 
+if command -v lsd &>/dev/null; then
+  alias ll="lsd -lA --group-directories-first"
+fi
+
 if command -v bat &>/dev/null; then
 	alias cat="bat"
 	export FZF_CTRL_T_OPTS="--height 100% --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
