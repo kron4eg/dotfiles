@@ -29,7 +29,8 @@ else
 fi
 
 if command -v lsd &>/dev/null; then
-  alias ll="lsd -lA --group-directories-first"
+  alias ll="lsd --oneline --almost-all --group-directories-first"
+  alias lla="ll --long"
 fi
 
 if command -v bat &>/dev/null; then
