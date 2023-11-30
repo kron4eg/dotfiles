@@ -29,8 +29,8 @@ else
 fi
 
 if command -v lsd &>/dev/null; then
-  alias ll="lsd --oneline --almost-all --group-directories-first"
-  alias lla="ll --long"
+	alias ll="lsd --oneline --almost-all --group-directories-first"
+	alias lla="ll --long"
 fi
 
 if command -v bat &>/dev/null; then
@@ -63,6 +63,10 @@ export MYSQL_PS1="\u@\h/\d> "
 export LANG=en_US.UTF-8
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export EDITOR=vim
+if command -v nvim &>/dev/null; then
+	export EDITOR=nvim
+	alias vim=nvim
+fi
 export HOMEBREW_NO_ANALYTICS=1
 # export GOPROXY="https://proxy.golang.org"
 
