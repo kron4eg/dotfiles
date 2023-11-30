@@ -23,15 +23,14 @@ linux-gnu*) ;;
 esac
 
 if command -v exa &>/dev/null; then
-	alias ll="exa --group-directories-first --long --all"
+	alias ll="eza --group-directories-first --all --icons --oneline --git"
+elif command -v lsd &>/dev/null; then
+	alias ll="lsd --oneline --almost-all --group-directories-first"
 else
-	alias ll="ls -la --color=auto --group-directories-first"
+	alias ll="ls -a --color=auto --group-directories-first"
 fi
 
-if command -v lsd &>/dev/null; then
-	alias ll="lsd --oneline --almost-all --group-directories-first"
-	alias lla="ll --long"
-fi
+alias lla="ll -l"
 
 if command -v bat &>/dev/null; then
 	alias cat="bat"
