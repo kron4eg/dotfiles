@@ -22,7 +22,7 @@ linux-gnu*) ;;
 
 esac
 
-if command -v exa &>/dev/null; then
+if command -v eza &>/dev/null; then
 	alias ll="eza --group-directories-first --all --icons --oneline --git"
 elif command -v lsd &>/dev/null; then
 	alias ll="lsd --oneline --almost-all --group-directories-first"
