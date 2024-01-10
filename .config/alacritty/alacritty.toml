@@ -1,0 +1,32 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.primary]
+background = "#121212"
+
+[cursor.style]
+blinking = "On"
+
+[font]
+size = 9.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[scrolling]
+history = 10000
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+args = ["--login"]
+program = "/bin/bash"
+
+[window]
+decorations = "none"
+dynamic_title = true
+
+[window.padding]
+x = 1
+y = 1
