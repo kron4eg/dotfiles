@@ -1,14 +1,12 @@
-[user]
-	name = Artiom Diomin
-	email = kron82@gmail.com
-	signingkey = 0xBCB1F54A80B45075
 [color]
 	diff = auto
 	status = auto
 	branch = auto
+
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
+
 [alias]
 	ci = commit
 	fci = commit --amend -m
@@ -20,32 +18,38 @@
 	mt = mergetool
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	gg = grep --break --heading -n
+
 [branch]
 	autosetupmerge = true
+
 [push]
 	default = nothing
 	; followTags = true
+
 [diff]
 	algorithm = patience
 	tool = vimdiff
 	compactionHeuristic = true
 	noprefix = true
+
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
+
 [difftool]
 	prompt = false
+
 [mergetool]
 	prompt = false
-[http "https://gopkg.in"]
-	followRedirects = true
-[commit]
-	gpgsign = true
+
 [rebase]
 	autoStash = true
+
 [pull]
 	ff = only
+
 [checkout]
 	defaultRemote = origin
+
 [init]
 	defaultBranch = main
