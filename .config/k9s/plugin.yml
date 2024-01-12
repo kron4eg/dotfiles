@@ -1,0 +1,74 @@
+plugin:
+  shell:
+    shortCut: Shift-S
+    description: Node root shell
+    scopes:
+    - node
+    command: kubectl
+    background: false
+    args:
+    - run
+    - shell-$NAME
+    - -n
+    - kube-system
+    - --context
+    - $CONTEXT
+    - --rm
+    - -it
+    - --image=alpine:3.17
+    - --overrides
+    - |
+      {
+        "spec": {
+          "hostPID": true,
+          "hostNetwork": true,
+          "hostIPC": true,
+          "nodeName": "$NAME",
+          "tolerations": [
+            {
+              "operator": "Exists",
+              "effect": "NoSchedule"
+            },
+            {
+              "operator": "Exists",
+              "effect": "NoExecute"
+            }
+          ],
+          "containers": [
+            {
+              "name": "shell",
+              "image": "alpine:3.17",
+              "command": [
+                "/bin/sh"
+              ],
+              "args": [
+                "-c",
+                "nsenter -t 1 -m -u -i -n -p -- bash"
+              ],
+              "stdin": true,
+              "stdinOnce": true,
+              "tty": true,
+              "securityContext": {
+                "privileged": true
+              }
+            }
+          ]
+        }
+      }
+
+  debug:
+    shortCut: Shift-D
+    description: Debug
+    scopes:
+    - po
+    command: kubectl
+    background: false
+    args:
+    - debug
+    - -n
+    - $NAMESPACE
+    - --context
+    - $CONTEXT
+    - -it
+    - --image=quay.io/kubermatic/util:2.3.0
+    - $NAME
