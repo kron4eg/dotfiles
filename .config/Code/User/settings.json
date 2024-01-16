@@ -1,0 +1,113 @@
+{
+    "[go]": {
+        "editor.defaultFormatter": "golang.go"
+    },
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        },
+        "editor.rulers": [
+            80
+        ],
+    },
+    "[templ]": {
+        "editor.defaultFormatter": "a-h.templ",
+        "editor.rulers": [
+            80
+        ]
+    },
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true,
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.cursorSurroundingLines": 5,
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 13,
+    "terminal.integrated.fontSize": 13,
+    "editor.fontWeight": "normal",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.minimap.enabled": false,
+    "editor.occurrencesHighlight": "multiFile",
+    "editor.rulers": [
+        120
+    ],
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "errorLens.delay": 1000,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 1,
+    "extensions.ignoreRecommendations": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "git.alwaysSignOff": true,
+    "git.enableStatusBarSync": false,
+    "git.ignoreRebaseWarning": true,
+    "git.mergeEditor": true,
+    "git.openRepositoryInParentFolders": "never",
+    "githubPullRequests.fileListLayout": "tree",
+    "githubPullRequests.pullBranch": "never",
+    "go.formatTool": "goimports",
+    "go.inlayHints.assignVariableTypes": true,
+    "go.inlayHints.compositeLiteralFields": true,
+    "go.inlayHints.compositeLiteralTypes": true,
+    "go.inlayHints.constantValues": true,
+    "go.inlayHints.functionTypeParameters": true,
+    "go.inlayHints.parameterNames": true,
+    "go.inlayHints.rangeVariableTypes": true,
+    "go.lintOnSave": "off",
+    "go.lintTool": "golangci-lint",
+    "go.toolsManagement.autoUpdate": true,
+    "go.useLanguageServer": true,
+    "gopls": {
+        "build.buildFlags": [],
+        "formatting.gofumpt": true,
+        "importShortcut": "Both",
+        "ui.diagnostic.analyses": {
+            "infertypeargs": false
+        },
+        "ui.semanticTokens": true,
+    },
+    "markdown-preview-enhanced.enableScriptExecution": true,
+    "settingsSync.ignoredSettings": [
+        "terminal.integrated.fontSize",
+        "editor.fontSize",
+    ],
+    "rust-analyzer.inlayHints.bindingModeHints.enable": true,
+    "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
+    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
+    "rust-analyzer.inlayHints.closureStyle": "rust_analyzer",
+    "rust-analyzer.inlayHints.discriminantHints.enable": "always",
+    "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "always",
+    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
+    "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
+    "rust-analyzer.inlayHints.reborrowHints.enable": "always",
+    "shellcheck.run": "onSave",
+    "shellformat.flag": "-sr -i 2",
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.enablePersistentSessions": false,
+    "window.autoDetectHighContrast": false,
+    "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "window.titleBarStyle": "custom",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#1A1A1A",
+        "statusBar.debuggingBackground": "#263238",
+        "statusBar.noFolderBackground": "#212121",
+    },
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.activityBar.location": "top",
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.renderSideBySide": false,
+}
