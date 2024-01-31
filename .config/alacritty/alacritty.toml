@@ -8,10 +8,10 @@ background = "#121212"
 blinking = "On"
 
 [font]
-size = 9.0
+size = 10.0
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "Iosevka Nerd Font"
 
 [scrolling]
 history = 10000
