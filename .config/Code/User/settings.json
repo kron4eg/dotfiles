@@ -23,7 +23,7 @@
         "editor.defaultFormatter": "rust-lang.rust-analyzer",
         "editor.formatOnSave": true,
     },
-    "diffEditor.experimental.showMoves": true,
+    "diffEditor.experimental.showMoves": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": false,
     "editor.bracketPairColorization.enabled": false,
@@ -75,6 +75,7 @@
         },
         "ui.semanticTokens": true,
     },
+    "html.format.wrapAttributes": "force",
     "markdown-preview-enhanced.enableScriptExecution": true,
     "settingsSync.ignoredSettings": [
         "terminal.integrated.fontSize",
