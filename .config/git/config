@@ -7,6 +7,9 @@
 	tool = vimdiff
 	conflictstyle = diff3
 
+[commit]
+	verbose = true
+
 [alias]
 	ci = commit
 	fci = commit --amend -m
@@ -24,10 +27,11 @@
 
 [push]
 	default = nothing
+	autosetupremote = true
 	; followTags = true
 
 [diff]
-	algorithm = patience
+	algorithm = histogram
 	tool = vimdiff
 	compactionHeuristic = true
 	noprefix = true
