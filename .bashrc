@@ -161,8 +161,9 @@ if [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.i
 	source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
 fi
 
+[ -f ~/.local/share/task/task.bash] && source ~/.local/share/task/task.bash
+
 complete -C /usr/local/bin/mc mc
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 fif() {
 	rg \
