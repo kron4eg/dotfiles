@@ -19,9 +19,9 @@ history = 10000
 [selection]
 save_to_clipboard = true
 
-[shell]
-args = ["--login"]
-program = "/bin/bash"
+# [shell]
+# args = ["--login"]
+# program = "/bin/bash"
 
 [window]
 decorations = "none"
