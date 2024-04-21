@@ -11,6 +11,10 @@ set -gx MYSQL_PS1 "\u@\h/\d> "
 set -gx LANG en_US.UTF-8
 set -gx NVIM_TUI_ENABLE_TRUE_COLOR 1
 set -gx EDITOR nvim
+set -gx FZF_DEFAULT_COMMAND "rg --files --no-ignore-vcs --hidden --follow"
+
+fish_add_path --global --path --prepend /bin /sbin
+fish_add_path --global --path --append ~/bin ~/.cargo/bin
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
