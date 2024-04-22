@@ -92,14 +92,14 @@ export PS1='\w\n\$ '
 
 function _update_ps1() {
 	PS1="$(powerline-go \
-		-newline \
-		-condensed \
 		-cwd-mode=plain \
-		-hostname-only-if-ssh \
-		-git-mode=simple \
-		-modules="aws,termtitle,direnv,kube,host,ssh,cwd,perms,git,venv,jobs,exit" \
 		-error=$? \
-		-jobs=$(jobs -p | wc -l))"
+		-git-mode=simple \
+		-hostname-only-if-ssh \
+		-jobs="$(jobs -p | wc -l)" \
+		-modules="aws,termtitle,direnv,kube,host,ssh,cwd,perms,git,venv,jobs,exit" \
+		-newline \
+		-theme=gruvbox)"
 
 	# Uncomment the following line to automatically clear errors after showing
 	# them once. This not only clears the error for powerline-go, but also for
