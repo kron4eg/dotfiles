@@ -25,6 +25,7 @@
     },
     "diffEditor.experimental.showMoves": false,
     "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": false,
     "editor.bracketPairColorization.enabled": false,
     "editor.cursorSurroundingLines": 5,
     "editor.fontFamily": "Iosevka Nerd Font",
@@ -45,7 +46,6 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    "git.alwaysSignOff": true,
     "git.enableStatusBarSync": false,
     "git.ignoreRebaseWarning": true,
     "git.mergeEditor": true,
@@ -109,5 +109,4 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.empty.hint": "hidden",
     "workbench.activityBar.location": "top",
-    "terminal.integrated.fontSize": 13,
 }
