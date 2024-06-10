@@ -68,12 +68,10 @@ fi
 export HOMEBREW_NO_ANALYTICS=1
 # export GOPROXY="https://proxy.golang.org"
 
-if [[ "$VSCODE_CLI" == "1" ]]; then
+if [ "$TERM_PROGRAM" = "vscode" ]; then
 	export EDITOR="code -w"
 fi
-if [[ "$TERM_PROGRAM" = "vscode" ]]; then
-	export EDITOR="code -w"
-fi
+
 export PAGER=less
 export HISTCONTROL="ignoredups"
 export HISTIGNORE='pwd:exit:fg:bg:top:clear:history:ll:ls:uptime:df'
