@@ -20,4 +20,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     gpgconf --launch gpg-agent
     direnv hook fish | source
+
+    if [ "$TERM_PROGRAM" = vscode ]
+        set -gx EDITOR "code -w"
+    end
 end
