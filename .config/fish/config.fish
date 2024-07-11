@@ -14,7 +14,7 @@ set -gx EDITOR nvim
 set -gx FZF_DEFAULT_COMMAND "rg --files --no-ignore-vcs --hidden --follow"
 
 fish_add_path --global --path --prepend /bin /sbin
-fish_add_path --global --path --append ~/bin ~/.cargo/bin
+fish_add_path --global --path --append ~/bin ~/.cargo/bin ~/.local/bin
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
