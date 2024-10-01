@@ -109,4 +109,5 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.empty.hint": "hidden",
     "workbench.activityBar.location": "top",
+    "git.alwaysSignOff": true,
 }
