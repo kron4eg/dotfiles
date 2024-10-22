@@ -6,7 +6,7 @@ alias aws-select-region="export AWS_DEFAULT_REGION=(aws ec2 describe-regions | j
 abbr --add k kubectl
 
 set -U fish_greeting
-set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+# set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -gx MYSQL_PS1 "\u@\h/\d> "
 set -gx LANG en_US.UTF-8
 set -gx NVIM_TUI_ENABLE_TRUE_COLOR 1
