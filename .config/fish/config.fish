@@ -22,6 +22,6 @@ if status is-interactive
     direnv hook fish | source
 
     if [ "$TERM_PROGRAM" = vscode ]
-        set -gx EDITOR "code -w"
+      set -gx EDITOR "code -w"
     end
 end
