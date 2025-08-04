@@ -4,6 +4,8 @@ alias aws-select-profile="export AWS_PROFILE=(aws configure list-profiles | fzf)
 alias aws-select-region="export AWS_DEFAULT_REGION=(aws ec2 describe-regions | jq -r .Regions[].RegionName | fzf)"
 
 abbr --add k kubectl
+abbr --add zr zellij run --
+abbr --add zrf zellij run --floating --
 
 set -U fish_greeting
 # set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
