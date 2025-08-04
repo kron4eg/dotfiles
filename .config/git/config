@@ -15,6 +15,8 @@
 	fci = commit --amend -m
 	st = status -sb
 	co = checkout
+	coma = checkout main
+	rhom = reset --hard origin/main
 	diff = diff --word-diff
 	br = branch
 	sb = show-branch
