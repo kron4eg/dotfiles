@@ -16,6 +16,7 @@
 	st = status -sb
 	co = checkout
 	coma = checkout main
+	ruo = remote update origin -p
 	rhom = reset --hard origin/main
 	diff = diff --word-diff
 	br = branch
