@@ -1,4 +1,11 @@
 {
+    "[django-html]": {
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        }
+    },
     "[go]": {
         "editor.defaultFormatter": "golang.go"
     },
@@ -13,17 +20,20 @@
             80
         ],
     },
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true,
+    },
     "[templ]": {
         "editor.defaultFormatter": "a-h.templ",
         "editor.rulers": [
             80
         ]
     },
-    "[rust]": {
-        "editor.defaultFormatter": "rust-lang.rust-analyzer",
-        "editor.formatOnSave": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "denoland.vscode-deno"
     },
-    "diffEditor.experimental.showMoves": true,
+    "comments.thread.confirmOnCollapse": "never",
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": false,
     "editor.bracketPairColorization.enabled": false,
@@ -34,6 +44,9 @@
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.minimap.enabled": false,
     "editor.occurrencesHighlight": "multiFile",
+    "editor.pasteAs.preferences": [
+        "markdown.link"
+    ],
     "editor.rulers": [
         120
     ],
@@ -46,6 +59,10 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "git.alwaysSignOff": true,
+    "git.blame.editorDecoration.enabled": false,
+    "git.blame.statusBarItem.enabled": true,
+    "git.confirmSync": false,
     "git.enableStatusBarSync": false,
     "git.ignoreRebaseWarning": true,
     "git.mergeEditor": true,
@@ -66,7 +83,9 @@
     "go.toolsManagement.autoUpdate": true,
     "go.useLanguageServer": true,
     "gopls": {
-        "build.buildFlags": [],
+        "build.buildFlags": [
+            "-tags=e2e"
+        ],
         "formatting.gofumpt": true,
         "importShortcut": "Both",
         "ui.diagnostic.analyses": {
@@ -80,6 +99,12 @@
         "terminal.integrated.fontSize",
         "editor.fontSize",
     ],
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.typeCheckingMode": "standard",
     "rust-analyzer.inlayHints.bindingModeHints.enable": true,
     "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
     "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
@@ -95,6 +120,8 @@
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.stickyScroll.enabled": false,
     "window.autoDetectHighContrast": false,
     "window.title": "${activeEditorMedium}${separator}${rootName}",
     "window.titleBarStyle": "custom",
@@ -109,8 +136,4 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.empty.hint": "hidden",
     "workbench.activityBar.location": "top",
-    "git.alwaysSignOff": true,
-    "[typescript]": {
-        "editor.defaultFormatter": "denoland.vscode-deno"
-    },
 }
