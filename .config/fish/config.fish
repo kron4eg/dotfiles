@@ -2,6 +2,7 @@ alias ll="eza --group-directories-first --all --icons --oneline --git"
 alias lla="ll -l"
 alias aws-select-profile="export AWS_PROFILE=(aws configure list-profiles | fzf)"
 alias aws-select-region="export AWS_DEFAULT_REGION=(aws ec2 describe-regions | jq -r .Regions[].RegionName | fzf)"
+alias isql="sqlite3 :memory:"
 
 abbr --add k kubectl
 abbr --add zr zellij run --
