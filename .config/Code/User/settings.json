@@ -16,9 +16,6 @@
             "strings": "on",
             "other": "on"
         },
-        "editor.rulers": [
-            80
-        ],
     },
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer",
@@ -26,9 +23,6 @@
     },
     "[templ]": {
         "editor.defaultFormatter": "a-h.templ",
-        "editor.rulers": [
-            80
-        ]
     },
     "[typescript]": {
         "editor.defaultFormatter": "denoland.vscode-deno"
@@ -68,9 +62,6 @@
     "git.mergeEditor": true,
     "git.openRepositoryInParentFolders": "never",
     "githubPullRequests.fileListLayout": "tree",
-    "githubPullRequests.pullBranch": "never",
-    "githubPullRequests.terminalLinksHandler": "github",
-    "go.formatTool": "goimports",
     "go.inlayHints.assignVariableTypes": true,
     "go.inlayHints.compositeLiteralFields": true,
     "go.inlayHints.compositeLiteralTypes": true,
@@ -93,7 +84,6 @@
         },
         "ui.semanticTokens": true,
     },
-    "html.format.wrapAttributes": "force",
     "markdown-preview-enhanced.enableScriptExecution": true,
     "settingsSync.ignoredSettings": [
         "terminal.integrated.fontSize",
@@ -136,4 +126,8 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.empty.hint": "hidden",
     "workbench.activityBar.location": "top",
+    "html.format.templating": true,
+    "[html]": {
+        "editor.formatOnSave": true,
+    },
 }
