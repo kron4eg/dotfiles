@@ -5,8 +5,7 @@ alias aws-select-region="export AWS_DEFAULT_REGION=(aws ec2 describe-regions | j
 alias isql="sqlite3 :memory:"
 
 abbr --add k kubectl
-abbr --add zr zellij run --
-abbr --add zrf zellij run --floating --
+abbr --add zhome zellij attach -c home
 
 set -U fish_greeting
 # set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
@@ -17,7 +16,8 @@ set -gx EDITOR nvim
 set -gx FZF_DEFAULT_COMMAND "rg --files --no-ignore-vcs --hidden --follow"
 
 fish_add_path --global --path --prepend /bin /sbin
-fish_add_path --global --path --append ~/bin ~/.cargo/bin ~/.local/bin ~/.krew/bin ~/.deno/bin ~/.opencode/bin
+fish_add_path --global --path --append ~/bin  ~/.local/bin
+fish_add_path --global --path --append ~/.cargo/bin ~/.krew/bin ~/.deno/bin ~/.opencode/bin ~/.lmstudio/bin
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
