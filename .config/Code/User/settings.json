@@ -9,6 +9,9 @@
     "[go]": {
         "editor.defaultFormatter": "golang.go"
     },
+    "[html]": {
+        "editor.formatOnSave": true,
+    },
     "[markdown]": {
         "editor.wordWrap": "on",
         "editor.quickSuggestions": {
@@ -28,6 +31,9 @@
         "editor.defaultFormatter": "denoland.vscode-deno"
     },
     "comments.thread.confirmOnCollapse": "never",
+    "chat.viewSessions.orientation": "stacked",
+    "chat.mcp.gallery.enabled": true,
+    "chat.extensionUnification.enabled": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": false,
     "editor.bracketPairColorization.enabled": false,
@@ -62,11 +68,13 @@
     "git.mergeEditor": true,
     "git.openRepositoryInParentFolders": "never",
     "githubPullRequests.fileListLayout": "tree",
+    "github.copilot.nextEditSuggestions.enabled": true,
     "go.inlayHints.assignVariableTypes": true,
     "go.inlayHints.compositeLiteralFields": true,
     "go.inlayHints.compositeLiteralTypes": true,
     "go.inlayHints.constantValues": true,
     "go.inlayHints.functionTypeParameters": true,
+    "go.inlayHints.ignoredError": true,
     "go.inlayHints.parameterNames": true,
     "go.inlayHints.rangeVariableTypes": true,
     "go.lintOnSave": "off",
@@ -84,6 +92,7 @@
         },
         "ui.semanticTokens": true,
     },
+    "html.format.templating": true,
     "markdown-preview-enhanced.enableScriptExecution": true,
     "settingsSync.ignoredSettings": [
         "terminal.integrated.fontSize",
@@ -111,6 +120,8 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.enablePersistentSessions": false,
     "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.initialHint": false,
+    "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.stickyScroll.enabled": false,
     "window.autoDetectHighContrast": false,
     "window.title": "${activeEditorMedium}${separator}${rootName}",
@@ -120,14 +131,11 @@
         "statusBar.debuggingBackground": "#263238",
         "statusBar.noFolderBackground": "#212121",
     },
+    "workbench.activityBar.location": "top",
     "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.experimental.modernUI": true,
     "workbench.iconTheme": "vs-minimal",
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.editor.empty.hint": "hidden",
-    "workbench.activityBar.location": "top",
-    "html.format.templating": true,
-    "[html]": {
-        "editor.formatOnSave": true,
-    },
 }
