@@ -138,4 +138,5 @@
     "workbench.iconTheme": "vs-minimal",
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "newUntitledFile",
+    "terraform.languageServer.enable": false,
 }
