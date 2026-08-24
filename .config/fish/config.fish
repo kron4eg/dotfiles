@@ -19,6 +19,8 @@ fish_add_path --global --path --prepend /bin /sbin
 fish_add_path --global --path --append ~/bin  ~/.local/bin
 fish_add_path --global --path --append ~/.cargo/bin ~/.krew/bin ~/.deno/bin ~/.opencode/bin ~/.lmstudio/bin
 
+fish_config theme choose dracula
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
     gpgconf --launch gpg-agent
