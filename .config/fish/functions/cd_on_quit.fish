@@ -1,5 +1,4 @@
 function spf
-    set os $(uname -s)
     set spf_last_dir "$HOME/.local/state/superfile/lastdir"
 
     command spf $argv

@@ -139,4 +139,5 @@
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "newUntitledFile",
     "terraform.languageServer.enable": false,
+    "githubPullRequests.pullBranch": "never",
 }
