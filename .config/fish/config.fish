@@ -17,7 +17,7 @@ set -gx FZF_DEFAULT_COMMAND "rg --files --no-ignore-vcs --hidden --follow"
 
 fish_add_path --global --path --prepend /bin /sbin
 fish_add_path --global --path --append ~/bin  ~/.local/bin
-fish_add_path --global --path --append ~/.cargo/bin ~/.krew/bin ~/.deno/bin ~/.opencode/bin ~/.lmstudio/bin
+fish_add_path --global --path --append ~/go/bin ~/.cargo/bin ~/.krew/bin ~/.deno/bin ~/.opencode/bin ~/.lmstudio/bin
 
 fish_config theme choose dracula
 
