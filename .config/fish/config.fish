@@ -16,7 +16,7 @@ set -gx EDITOR nvim
 set -gx FZF_DEFAULT_COMMAND "rg --files --no-ignore-vcs --hidden --follow"
 
 fish_add_path --global --path --prepend /bin /sbin
-fish_add_path --global --path --append ~/bin  ~/.local/bin
+fish_add_path --global --path --append ~/bin ~/.local/bin
 fish_add_path --global --path --append ~/go/bin ~/.cargo/bin ~/.krew/bin ~/.deno/bin ~/.opencode/bin ~/.lmstudio/bin
 
 fish_config theme choose dracula
@@ -25,8 +25,11 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     gpgconf --launch gpg-agent
     direnv hook fish | source
+    if command -q zoxide
+        zoxide init fish | source
+    end
 
     if [ "$TERM_PROGRAM" = vscode ]
-      set -gx EDITOR "code -w"
+        set -gx EDITOR "code -w"
     end
 end
