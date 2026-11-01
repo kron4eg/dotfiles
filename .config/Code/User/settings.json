@@ -31,11 +31,7 @@
         "editor.defaultFormatter": "denoland.vscode-deno"
     },
     "comments.thread.confirmOnCollapse": "never",
-    "chat.viewSessions.orientation": "stacked",
-    "chat.mcp.gallery.enabled": true,
-    "chat.extensionUnification.enabled": false,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "diffEditor.renderSideBySide": false,
+    "diffEditor.renderSideBySide": true,
     "editor.bracketPairColorization.enabled": false,
     "editor.cursorSurroundingLines": 5,
     "editor.fontFamily": "Iosevka Nerd Font",
@@ -128,6 +124,7 @@
     "window.titleBarStyle": "custom",
     "workbench.colorCustomizations": {
         "statusBar.background": "#1A1A1A",
+        "statusBar.inactiveBackground": "#1A1A1A",
         "statusBar.debuggingBackground": "#263238",
         "statusBar.noFolderBackground": "#212121",
     },
