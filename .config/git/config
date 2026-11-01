@@ -19,6 +19,8 @@
 	ru = remote update -p
 	rhom = reset --hard origin/main
 	diff = diff --word-diff
+  review = difftool -d
+  pr-fetch = "!f() { git fetch origin refs/pull/$1/head; }; f"
 	br = branch
 	sb = show-branch
 	mt = mergetool
@@ -35,7 +37,7 @@
 
 [diff]
 	algorithm = histogram
-	tool = vimdiff
+	tool = meld
 	compactionHeuristic = true
 	noprefix = true
 
