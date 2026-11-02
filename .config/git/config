@@ -20,7 +20,7 @@
 	rhom = reset --hard origin/main
 	diff = diff --word-diff
   review = difftool -d
-  pr-fetch = "!f() { git fetch origin refs/pull/$1/head; }; f"
+  pr-fetch = "!f() { git fetch origin refs/pull/$1/head:pr-$1; }; f"
 	br = branch
 	sb = show-branch
 	mt = mergetool
